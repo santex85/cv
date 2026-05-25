@@ -97,10 +97,35 @@
             letter-spacing: 0.5px;
         }
 
-        .profile-text {
-            font-size: 0.95rem;
-            color: var(--text-color);
+        .profile-lead {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 15px;
             text-align: justify;
+        }
+
+        .profile-highlights {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .profile-highlights li {
+            font-size: 0.92rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .profile-highlights li::before {
+            content: "→";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
 
         .skills-grid {
@@ -244,14 +269,21 @@
     </header>
 
     <section>
-        <h2>📌 Professional Profile</h2>
-        <p class="profile-text">
-            Highly analytical, results-driven **Tech-Driven CEO**, B2B SaaS Founder, and **hardcore AI Architect** with 12+ years of premium hospitality business ownership (Owner & CEO of Satva Samui Yoga & Wellness Resort) combined with expert-level hands-on software engineering. A rare leader who bridges the gap between C-suite strategic vision/fundraising and technical execution/architecture. Master in designing and building high-performance backend systems (Python, FastAPI, Django), reactive frontends (Vue.js), and deploying autonomous agentic AI workflows (LangChain, LlamaIndex, RAG pipelines). Iron-clad discipline forged through competitive endurance road cycling and military leadership. Proven track record of translating complex real-world operational pain points into scalable, production-ready SaaS and AI products.
-        </p>
+        <h2>Professional Profile</h2>
+        <div class="profile-content">
+            <p class="profile-lead">
+                Highly analytical <strong>Tech-Driven CEO</strong>, B2B SaaS Founder, and <strong>Lead AI Architect</strong> with a unique 12-year trajectory leading a premium wellness resort (Satva Samui) alongside hands-on engineering of advanced AI and PropTech platforms.
+            </p>
+            <ul class="profile-highlights">
+                <li><strong>C-Suite & Code Bridge:</strong> A rare leader who seamlessly translates complex operational pain points into scalable SaaS architecture, communicating on equal terms with both VC investors and system engineers.</li>
+                <li><strong>Safety-Critical AI Rigor:</strong> Expert in deploying autonomous agentic AI workflows (LangChain, RAG) with a strict, railway-grade engineering mindset that enforces 100% factual reliability and eliminates hallucinations.</li>
+                <li><strong>Disciplined Leadership:</strong> Exceptional operational execution, crisis management, and long-term strategic focus, reinforced by a military sergeant background and competitive endurance road cycling.</li>
+            </ul>
+        </div>
     </section>
 
     <section>
-        <h2>🛠 Technical Stack & Key Competencies</h2>
+        <h2>Technical Stack & Key Competencies</h2>
         <div class="skills-grid">
             <div class="skill-category">
                 <strong>AI Engineering & GenAI</strong>
@@ -273,7 +305,7 @@
     </section>
 
     <section>
-        <h2>💼 Professional Experience</h2>
+        <h2>Professional Experience</h2>
 
         <div class="experience-item">
             <div class="experience-header">
@@ -338,7 +370,7 @@
     </section>
 
     <section>
-        <h2>🎓 Education & Special Training</h2>
+        <h2>Education & Special Training</h2>
         
         <div class="edu-item">
             <div class="edu-header">
@@ -361,7 +393,7 @@
     </section>
 
     <section>
-        <h2>🗣 Languages</h2>
+        <h2>Languages</h2>
         <div class="skills-grid">
             <div class="skill-category">
                 <strong>Russian:</strong> Native
