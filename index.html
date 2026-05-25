@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Cheremikin - CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: hsl(220, 40%, 18%);
+            --secondary-color: hsl(220, 20%, 45%);
+            --accent-color: hsl(220, 60%, 35%);
+            --text-color: hsl(220, 25%, 15%);
+            --bg-color: hsl(0, 0%, 100%);
+            --light-bg: hsl(220, 30%, 97%);
+            --border-color: hsl(220, 15%, 90%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--bg-color);
+            padding: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-text {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-category {
+            font-size: 0.9rem;
+        }
+
+        .skill-category strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .job-company {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .job-dates {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .experience-item ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 4px;
+        }
+
+        .experience-item li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .edu-item {
+            margin-bottom: 12px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .edu-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .edu-details {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+
+        .edu-impact {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            margin-top: 4px;
+            padding-left: 10px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .contact-info a {
+                color: var(--secondary-color) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+    <header>
+        <h1>Alexander Cheremikin</h1>
+        <div class="subtitle">Tech-Driven CEO | Lead AI Architect & B2B SaaS Founder</div>
+        <div class="contact-info">
+            <div>📍 Koh Samui, Thailand</div>
+            <div>📧 <a href="mailto:santex85@gmail.com">santex85@gmail.com</a></div>
+            <div>📱 +66 94 309 3892</div>
+            <div>🔗 <a href="https://www.linkedin.com/in/alexandr-cheremikin-423a381b5/" target="_blank">LinkedIn</a></div>
+            <div>🌐 <a href="https://open-pms.com" target="_blank">open-pms.com</a></div>
+            <div>🌐 <a href="https://tsspro.ai" target="_blank">tsspro.ai</a></div>
+        </div>
+    </header>
+
+    <section>
+        <h2>📌 Professional Profile</h2>
+        <p class="profile-text">
+            Highly analytical, results-driven **Tech-Driven CEO**, B2B SaaS Founder, and **hardcore AI Architect** with 12+ years of premium hospitality business ownership (Owner & CEO of Satva Samui Yoga & Wellness Resort) combined with expert-level hands-on software engineering. A rare leader who bridges the gap between C-suite strategic vision/fundraising and technical execution/architecture. Master in designing and building high-performance backend systems (Python, FastAPI, Django), reactive frontends (Vue.js), and deploying autonomous agentic AI workflows (LangChain, LlamaIndex, RAG pipelines). Iron-clad discipline forged through competitive endurance road cycling and military leadership. Proven track record of translating complex real-world operational pain points into scalable, production-ready SaaS and AI products.
+        </p>
+    </section>
+
+    <section>
+        <h2>🛠 Technical Stack & Key Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>AI Engineering & GenAI</strong>
+                Gemini API, OpenAI API, Anthropic, LangChain, LlamaIndex, Agentic AI Workflows, RAG, Prompt Engineering, Vector Databases (Pinecone, Qdrant), LLM Stress-Testing & Reliability Evaluation.
+            </div>
+            <div class="skill-category">
+                <strong>Core Software Engineering</strong>
+                Python (Expert), FastAPI (High-Performance APIs), Django (Complex Systems), Go, Vue.js, PostgreSQL (Expert in database-level transactional concurrency & locking).
+            </div>
+            <div class="skill-category">
+                <strong>DevOps & Infrastructure</strong>
+                GitHub Actions (CI/CD workflows, repository management), Docker, Ubuntu Server administration, Shell Scripting.
+            </div>
+            <div class="skill-category">
+                <strong>Executive & Product Leadership</strong>
+                Full-Cycle B2B SaaS Product Management, P&L & Budget Management, Legal & Financial Compliance (Thailand), Agile/Scrum, Investor Relations & Fundraising.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>💼 Professional Experience</h2>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <span class="job-title">Founder & Lead AI Architect</span><br>
+                    <span class="job-company">TSSPro | SportTech & HealthTech</span>
+                </div>
+                <div class="job-dates">2024 – Present</div>
+            </div>
+            <ul>
+                <li><strong>AI/Nutrition Architecture:</strong> Designed and built an intelligent AI platform at the intersection of generative AI and sports science for cyclic endurance sports (cycling, running, triathlon).</li>
+                <li><strong>Algorithm Development:</strong> Engineered AI-native metabolic modeling, training load calculation engines, and personalized sports nutrition algorithms to optimize athlete recovery and performance.</li>
+                <li><strong>Tech Stack:</strong> Architected backend APIs in Python and FastAPI, utilizing LLMs to synthesize scientific training guidelines into actionable daily plans.</li>
+            </ul>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <span class="job-title">Founder & Principal Systems Architect</span><br>
+                    <span class="job-company">OpenPMS | PropTech & B2B SaaS</span>
+                </div>
+                <div class="job-dates">2021 – Present</div>
+            </div>
+            <ul>
+                <li><strong>Product Creation & Engineering:</strong> Architected and developed a modern, cloud-based B2B Property Management System (PMS) designed to disrupt traditional vendor monopolies.</li>
+                <li><strong>Concurrency & Database Design:</strong> Designed a high-performance room grid inventory system utilizing database-level transaction locking to guarantee absolute data consistency and prevent double bookings.</li>
+                <li><strong>Enterprise Integrations:</strong> Developed API-first integrations with Stripe Connect (payment processing) and Channex (two-way synchronization with 400+ OTA channels like Booking.com, Airbnb, Expedia).</li>
+                <li><strong>AI Integration & Automation:</strong> Integrated GPT/Gemini-based AI agents to automate guest communication, folio management, and localized tax engines (e.g., Thailand VAT compliance).</li>
+                <li><strong>Hardcore AI Stress-Testing:</strong> Conducted thousands of stress-tests on integrated LLMs under tight constraints to ensure zero-hallucination outputs in public-facing messaging.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <span class="job-title">Owner & Chief Executive Officer (CEO)</span><br>
+                    <span class="job-company">Satva Samui Yoga & Wellness Resort | Koh Samui, Thailand</span>
+                </div>
+                <div class="job-dates">2014 – Present</div>
+            </div>
+            <ul>
+                <li><strong>Operational Leadership:</strong> Built and managed Satva Samui, growing it into a leading luxury yoga and wellness resort on Koh Samui. Oversee daily operations, F&B, Front Desk, guest relations, and financial performance (P&L).</li>
+                <li><strong>Software Innovation:</strong> Personally designed and developed custom booking engines, PMS integrations, and internal business automation tools, transforming resort operations and laying the architectural foundation for OpenPMS.</li>
+                <li><strong>International Compliance:</strong> Successfully navigate Thai legal compliance, licensing, digital banking integration, and tax regulations.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <span class="job-title">Sergeant / Squad Leader</span><br>
+                    <span class="job-company">Military Service | Ground Forces</span>
+                </div>
+                <div class="job-dates">2 Years Service</div>
+            </div>
+            <ul>
+                <li><strong>Leadership & Discipline:</strong> Commanded a squad, managed personnel training, strict discipline, and field safety operations.</li>
+                <li><strong>Crisis Management:</strong> Developed strong foundation in quick decision-making under stressful environments, rigorous organization, and clear command, skills seamlessly applied to leading technical teams.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>🎓 Education & Special Training</h2>
+        
+        <div class="edu-item">
+            <div class="edu-header">
+                <span class="edu-title">Technical Railway Education</span>
+                <span class="job-dates">Specialty: Locomotive Driver</span>
+            </div>
+            <div class="edu-details">Vocational & Practical Systems Training</div>
+            <p class="edu-impact">
+                <strong>Systemic Impact on IT Rigor:</strong> Operating heavy, safety-critical locomotive systems instills an absolute commitment to protocols, extreme attention to mechanical details, and a zero-tolerance approach to systems failure. In software engineering, this is directly translated into bulletproof code, robust error handling, and strict resistance to software hallucinations.
+            </p>
+        </div>
+
+        <div class="edu-item">
+            <div class="edu-header">
+                <span class="edu-title">Secondary Education</span>
+                <span class="job-dates">Graduated: 2002</span>
+            </div>
+            <div class="edu-details">School №11, Belogorsk, Amur Oblast, Russia</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🗣 Languages</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Russian:</strong> Native
+            </div>
+            <div class="skill-category">
+                <strong>English:</strong> Professional Working Proficiency (Technical discussions & team leadership)
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
