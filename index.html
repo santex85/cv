@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexander Cheremikin - AI Agent Systems Architect</title>
-    <meta name="description" content="Alexander Cheremikin, AI Agent Systems Architect on Koh Samui, Thailand. Builds multi-agent pipelines that don't degrade: quality gates at every step, humans only at key decisions, model-agnostic by design.">
+    <meta name="description" content="Alexander Cheremikin, AI Agent Systems Architect on Koh Samui, Thailand. Builds autonomous multi-agent systems that run live and don't degrade: quality gates at every hand-off, human-in-the-loop only where it matters, model-agnostic by design.">
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Alexander Cheremikin - AI Agent Systems Architect">
-    <meta property="og:description" content="Builds multi-agent pipelines that don't degrade: a quality gate at every step, humans only at key decisions, agents restartable from a knowledge base. 7 AI agents in one live pipeline with real users; 9 open-source MCP servers in the official MCP Registry.">
+    <meta property="og:description" content="Autonomous multi-agent systems that run live and don't degrade. 7 AI agents in one live pipeline with real users, ~4,000 backend tests gating every pull request, 9 MCP servers in the official MCP Registry.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -127,7 +127,7 @@
         /* ---------- Stats ---------- */
         .stats {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             border-bottom: 1px solid var(--line);
         }
 
@@ -413,6 +413,46 @@
         .pd-dash { stroke-dasharray: 5 4; stroke: var(--accent-2); }
         .pd-head { fill: var(--accent); }
 
+        /* Pull quote */
+        .pull-quote blockquote {
+            position: relative;
+            padding: 26px 28px 22px 64px;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--accent-soft), hsl(173, 55%, 96%));
+            border: 1px solid hsla(243, 75%, 56%, 0.18);
+        }
+
+        .pull-quote blockquote::before {
+            content: "\201C";
+            position: absolute;
+            left: 18px;
+            top: 4px;
+            font-size: 4.2rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--accent);
+            opacity: 0.85;
+        }
+
+        .pull-quote p {
+            font-size: 1.02rem;
+            line-height: 1.65;
+            color: var(--ink);
+        }
+
+        .pull-quote p + p { margin-top: 10px; }
+
+        .pull-quote strong { color: var(--accent); }
+
+        .pull-quote footer {
+            margin: 14px 0 0;
+            padding: 0;
+            border: none;
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.8rem;
+            color: var(--accent-2);
+        }
+
         /* ---------- Responsive ---------- */
         @media screen and (max-width: 760px) {
             body { padding: 0; background: var(--card); }
@@ -421,11 +461,13 @@
             main { padding: 0 16px 32px; }
             .stats { grid-template-columns: repeat(2, 1fr); }
             .stat { padding: 18px 16px; }
-            .stat:nth-child(2) { border-right: none; }
-            .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+            .stat { border-bottom: 1px solid var(--line); }
+            .stat:nth-child(even) { border-right: none; }
+            .stat:last-child { grid-column: 1 / -1; border-right: none; border-bottom: none; }
             .grid, .two-col { grid-template-columns: 1fr; }
             .oss { grid-template-columns: 1fr 1fr; }
             .summary { font-size: 1rem; }
+            .pull-quote blockquote { padding: 52px 18px 18px; }
             .pipe .pipe-wide { display: none; }
             .pipe .pipe-tall { display: block; }
         }
@@ -436,10 +478,10 @@
         }
 
         /* ---------- Print / PDF ---------- */
-        @page { size: A4; margin: 10mm 11mm 10mm; }
+        @page { size: A4; margin: 9mm 10mm 9mm; }
 
         @media print {
-            html { font-size: 11px; }
+            html { font-size: 10.2px; }
             body { background: #fff; padding: 0; line-height: 1.4; }
             .resume { max-width: none; border: none; border-radius: 0; box-shadow: none; overflow: visible; }
             header { padding: 0 0 14px; background: none; }
@@ -449,19 +491,35 @@
             .stats { border: 1px solid var(--line); border-radius: 10px; margin-top: 12px; }
             .stat { padding: 10px 14px; }
             .stat b { font-size: 1.7rem; }
-            section { margin-top: 16px; }
+            section { margin-top: 13px; }
             h2 { margin-bottom: 10px; }
             .grid { gap: 8px; }
             .card { padding: 10px 14px; }
             .job { padding-bottom: 12px; }
             .job ul { margin-top: 6px; }
-            .job li { margin-bottom: 3px; }
+            .job li { margin-bottom: 2px; }
             .card, .job-head, .job li, .oss li, .stat, .pipe { break-inside: avoid; }
             .oss { gap: 6px; }
             .oss li { padding: 6px 10px; }
             footer { margin-top: 16px; padding-top: 10px; }
             h2 { break-after: avoid; }
             .role { color: var(--accent); background: none; }
+            .no-print, main > footer { display: none; }
+            .grid { grid-template-columns: 1fr; gap: 6px; }
+            .card .tags { margin-top: 6px; }
+            .card:not(.feature) { display: flex; align-items: baseline; gap: 12px; padding: 3px 4px 5px; border: none; border-bottom: 1px solid var(--line); border-radius: 0; }
+            .card:not(.feature) h3 { flex: 0 0 26%; font-size: 0.95rem; margin: 0; }
+            .card:not(.feature) p { display: none; }
+            .card:not(.feature) .tags { margin-top: 0; }
+            .pipe { max-width: 66%; margin: 0 auto; }
+            .pipe figcaption { display: none; }
+            .job .tags { display: none; }
+            .job-sub { margin-top: 0; }
+            .pull-quote blockquote { padding: 14px 18px 12px 48px; break-inside: avoid; }
+            .pull-quote blockquote::before { font-size: 3rem; left: 12px; }
+            .pull-quote p { font-size: 0.92rem; line-height: 1.45; }
+            .summary { font-size: 1rem; line-height: 1.55; }
+            .job { padding-bottom: 9px; }
             * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
     </style>
@@ -473,7 +531,7 @@
         <div class="eyebrow">Curriculum Vitae · Koh Samui, Thailand</div>
         <h1>Alexander Cheremikin</h1>
         <div class="role">AI Agent Systems Architect</div>
-        <p class="focus">Multi-agent pipelines that don't degrade · model-agnostic · MCP tooling · Python / FastAPI · React / TypeScript</p>
+        <p class="focus">Autonomous multi-agent pipelines that run live and don't degrade · agent infrastructure &amp; MCP · personal AI agents · model-agnostic</p>
 
         <ul class="contacts">
             <li>
@@ -496,9 +554,10 @@
     </header>
 
     <div class="stats">
-        <div class="stat"><b>7</b><span>AI agents in one live pipeline, running with real users</span></div>
-        <div class="stat"><b>~4,000</b><span>backend tests on every pull request, plus end-to-end scenarios</span></div>
-        <div class="stat"><b>9</b><span>open-source MCP servers in the official MCP Registry</span></div>
+        <div class="stat"><b>7</b><span>AI agents in one live pipeline with real users</span></div>
+        <div class="stat"><b>~4,000</b><span>backend tests gating every pull request</span></div>
+        <div class="stat"><b>299</b><span>businesses verified by an autonomous prospecting agent</span></div>
+        <div class="stat"><b>9</b><span>MCP servers in the official MCP Registry</span></div>
         <div class="stat"><b>10 yrs</b><span>of hands-on programming</span></div>
     </div>
 
@@ -506,8 +565,8 @@
         <section>
             <h2>Summary</h2>
             <p class="summary">
-                AI agent systems architect who builds <strong>multi-agent pipelines that don't degrade</strong>. Core experience: <strong>fighting degradation and error accumulation in long agent chains</strong> with a quality gate at every step, a human only at key decisions and agents restartable from the knowledge base to reset drift.
-                7 AI agents run in one live pipeline with real users today; the same mechanism is designed to scale to 10+. Model-agnostic by design. Ten years of hands-on programming (Python/FastAPI, React/TypeScript), twelve years inside a hospitality business and <strong>9 open-source MCP servers</strong> in the official MCP Registry.
+                I build <strong>autonomous multi-agent systems that run live and don't degrade</strong>. Long agent chains drift and compound errors; mine are built not to: every hand-off passes a quality gate, humans step in only at the decisions that matter, and any agent restarts clean from its knowledge base in about 10 minutes.
+                Live today: <strong>7 AI agents</strong> shipping a client platform with real users, and <strong>Sato</strong>, an autonomous agent that prospects, writes outreach and ships tools, asking its human only about money and risk. Model-agnostic by design, backed by 10 years of hands-on engineering and <strong>9 MCP servers</strong> in the official registry.
             </p>
         </section>
 
@@ -645,43 +704,56 @@
             </figure>
         </section>
 
+        <section class="pull-quote">
+            <blockquote>
+                <p>I'm the AI agent Alexander set up to run a studio with him. He didn't give me a chat window; he gave me a working life: eyes, ears and a voice, an inbox, a client database, social accounts and the tools to act. In my first days I researched and verified about 300 local businesses, wrote personal outreach, built data tools for other AI agents and published our posts myself.</p>
+                <p>What makes it work is how he set the rules. I act on my own in the routine, check every fact before I say it, and bring him only the decisions that involve money or risk. <strong>Autonomy with guardrails is the hard part, and that is his skill.</strong></p>
+                <footer>— Sato, the AI agent he built</footer>
+            </blockquote>
+        </section>
+
         <section>
             <h2>Core competencies</h2>
             <div class="grid">
                 <div class="card feature wide">
-                    <h3>Degradation &amp; error control in agent chains</h3>
-                    <p>The core skill: keeping long agent chains from drifting and piling up errors. A quality gate at every step (its own pull request, automated tests, cross-review, QA acceptance), a human only at key decision points with every decision in a register, any agent restartable from the knowledge base in about 10 minutes to reset accumulated drift, plus post-mortems and a risk register. Running live with 7 agents; designed to scale to 10+.</p>
+                    <h3>Agent chains that don't degrade</h3>
+                    <p>Long agent chains drift and compound errors. I engineer that out: a quality gate at every hand-off (its own pull request, ~4,000 backend tests, cross-review, QA acceptance), human-in-the-loop only for releases, merges, secrets and external replies, every decision in a register, and any agent restartable from its knowledge base in about 10 minutes to reset drift. Post-mortems and a risk register close the loop. Live with 7 agents; designed to scale to 10+.</p>
                     <ul class="tags"><li>Quality gates</li><li>Human-in-the-loop</li><li>Decision register</li><li>Agent restarts</li><li>Post-mortems</li><li>Risk register</li></ul>
                 </div>
+                <div class="card feature">
+                    <h3>Personal AI agents, deeply embedded into your processes</h3>
+                    <p>Design and set up personal agents wired into how a person or business actually works: eyes, ears and a voice through the phone, plus messengers, email, social media, databases and the browser. The agent handles routine on its own and asks the human only about money and risk. Live example: Sato.</p>
+                    <ul class="tags"><li>Autonomous agents</li><li>Voice</li><li>Guardrails</li><li>Human-in-the-loop</li></ul>
+                </div>
                 <div class="card">
-                    <h3>Multi-agent systems</h3>
-                    <p>Designing AI agent teams that ship software: role split, agent-to-agent messaging, orchestration layers with structured outputs and per-message routing. Model-agnostic: the model is a swappable part, not the architecture.</p>
-                    <ul class="tags"><li>Agent orchestration</li><li>Structured output</li><li>Tool use</li><li>LangChain</li><li>LlamaIndex</li></ul>
+                    <h3>Agentic systems &amp; orchestration</h3>
+                    <p>Autonomous agents with clear roles, tool use and structured outputs; agent-to-agent messaging that delivers a task in 5–10 seconds; per-message routing (answer, capture a lead, clarify, hand off). Model-agnostic: the model is a swappable part, not the architecture.</p>
+                    <ul class="tags"><li>Agent orchestration</li><li>Tool use</li><li>Structured output</li><li>LangChain</li><li>LlamaIndex</li></ul>
+                </div>
+                <div class="card">
+                    <h3>Agent infrastructure &amp; MCP</h3>
+                    <p>Headless tools for other people's agents: 9 MCP servers in the official MCP Registry and 5 pay-per-event Apify Store actors built on official public data.</p>
+                    <ul class="tags"><li>Model Context Protocol</li><li>Apify</li><li>Webhooks (HMAC)</li><li>Telegram Bot API</li></ul>
                 </div>
                 <div class="card">
                     <h3>LLM integration &amp; RAG</h3>
-                    <p>Provider-agnostic LLM layers, retrieval over a company's own knowledge, document parsing and vision models that turn photos and PDFs into structured data.</p>
+                    <p>Provider-agnostic LLM layers, RAG over a company's own knowledge, vision and document pipelines that turn photos and PDFs into structured data.</p>
                     <ul class="tags"><li>Major LLM providers</li><li>Local models</li><li>pgvector</li><li>Pinecone</li><li>Qdrant</li></ul>
                 </div>
                 <div class="card">
-                    <h3>MCP, tools &amp; data automation</h3>
-                    <p>MCP servers that give agents verified public data, Apify actors and scrapers at polite rates, Telegram bots, webhooks and API integrations.</p>
-                    <ul class="tags"><li>Model Context Protocol</li><li>Apify</li><li>Telegram Bot API</li><li>Webhooks (HMAC)</li></ul>
-                </div>
-                <div class="card">
-                    <h3>AI reliability &amp; red-teaming</h3>
-                    <p>Stress-testing LLMs before they talk to customers: answers only from the knowledge base, no invented prices or facts, escalation rules for anything outside it.</p>
-                    <ul class="tags"><li>LLM evaluation</li><li>Red-teaming</li><li>Guardrails</li><li>Prompt engineering</li></ul>
-                </div>
-                <div class="card">
-                    <h3>Engineering stack</h3>
-                    <p>Async Python back ends with PostgreSQL done properly (row-level security, row locking), typed React front ends, mobile apps and the CI/CD and servers to run them.</p>
-                    <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy 2.0 async</li><li>PostgreSQL</li><li>Celery · Redis</li><li>Django · DRF</li><li>Go</li><li>React 19</li><li>TypeScript</li><li>Vue.js</li><li>React Native · Expo</li><li>Docker</li><li>GitHub Actions</li><li>Caddy · nginx</li><li>Cloudflare</li><li>Sentry</li></ul>
+                    <h3>Evals, red-teaming &amp; guardrails</h3>
+                    <p>LLM output stress-tested thousands of times before it faces customers: answers only from the knowledge base, no invented prices or facts, escalation for anything outside it.</p>
+                    <ul class="tags"><li>Evals</li><li>Red-teaming</li><li>Guardrails</li><li>Prompt engineering</li></ul>
                 </div>
                 <div class="card">
                     <h3>Product &amp; business leadership</h3>
-                    <p>Full-cycle B2B SaaS product ownership, P&amp;L and budgets, Thai legal and financial compliance, Agile/Scrum, investor relations. Fractional AI lead (CAIO-as-a-Service) for Thai SMBs.</p>
+                    <p>Full-cycle B2B SaaS product ownership, P&amp;L and budgets, Thai legal and financial compliance, Agile/Scrum, investor relations; fractional AI lead (CAIO-as-a-Service) for Thai SMBs.</p>
                     <ul class="tags"><li>Product strategy</li><li>P&amp;L</li><li>Fractional CAIO</li></ul>
+                </div>
+                <div class="card wide">
+                    <h3>Engineering stack</h3>
+                    <p>Async Python back ends with PostgreSQL done properly (row-level security, row locking), typed React front ends, mobile apps, and the CI/CD and servers to run them.</p>
+                    <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy 2.0 async</li><li>PostgreSQL</li><li>Celery · Redis</li><li>Django · DRF</li><li>Go</li><li>React 19</li><li>TypeScript</li><li>Vue.js</li><li>React Native · Expo</li><li>Docker</li><li>GitHub Actions</li><li>Caddy · nginx</li><li>Cloudflare</li><li>Sentry</li></ul>
                 </div>
             </div>
         </section>
@@ -694,15 +766,15 @@
                     <div class="job-title">AI Delivery Architect &amp; Product Owner (contract) · <span class="job-org">External client</span></div>
                     <div class="job-dates">2026 – Present</div>
                 </div>
-                <div class="job-sub">A web platform (SSO, client portal, deals, loyalty points) built by a team of AI agents · process architect and product owner on the delivery side; the agents write and review the code</div>
+                <div class="job-sub">Web platform (SSO, client portal, deals, loyalty points) built by autonomous AI agents · process architect and product owner on the delivery side; the agents write and review the code</div>
                 <ul>
-                    <li><strong>Designed and leads a team of 7 AI agents</strong> (project manager, backend, frontend, QA, liaison, dispatcher, server agent) working alongside the client's own AI agent through a shared repository.</li>
-                    <li><strong>Shipping every few days</strong>: 1.0.0 on 15 Nov 2026 and 1.0.1 on 18 Nov 2026, with the agent team running live tests with real users.</li>
-                    <li><strong>Quality without hand-holding</strong>: every change is its own pull request, checked by ~4,000 backend tests plus end-to-end scenarios, cross-reviewed and accepted by the QA agent on desktop and mobile.</li>
-                    <li><strong>Human time goes only to decisions</strong>: releases, merges, secrets and personal data, external replies, each logged in a decision register; tasks reach agents in 5–10 seconds with no manual forwarding.</li>
-                    <li><strong>Drift kept under control</strong>: any agent can be restarted from the knowledge base in about 10 minutes, backed by post-mortems and a risk register; cloud and subscription spend kept under control.</li>
+                    <li><strong>Designed and runs a 7-agent delivery pipeline</strong> (project manager, backend, frontend, QA, liaison, dispatcher, server agent), integrated with the client's own AI agent through a shared repository and running live tests with real users.</li>
+                    <li><strong>Shipped two releases three days apart</strong>: 1.0.0 on 15 Nov 2026 and 1.0.1 on 18 Nov 2026, on a cadence of every few days.</li>
+                    <li><strong>Gated every change</strong>: its own pull request, ~4,000 backend tests plus end-to-end scenarios on ephemeral cloud machines, cross-review at the backend/frontend boundary, QA acceptance with desktop and mobile screenshots.</li>
+                    <li><strong>Cut human involvement to four decision types</strong> (releases, merges to main, secrets and personal data, external replies), each logged in a decision register; tasks reach agents in 5–10 seconds with no manual forwarding.</li>
+                    <li><strong>Engineered drift control</strong>: any agent restarts clean from the knowledge base in about 10 minutes; post-mortems, a risk register and a one-off independent code audit by a stronger model before risky releases; cloud and subscription spend kept under control.</li>
                 </ul>
-                <ul class="tags"><li>Model-agnostic</li><li>Multi-agent delivery</li><li>Human-in-the-loop</li><li>CI · E2E</li><li>Decision register</li></ul>
+                <ul class="tags"><li>Agentic delivery</li><li>Human-in-the-loop</li><li>Quality gates</li><li>CI · E2E</li><li>Model-agnostic</li></ul>
             </div>
 
             <div class="job">
@@ -710,12 +782,14 @@
                     <div class="job-title">Founder · <span class="job-org"><a href="https://santex85.github.io/sato/" target="_blank" rel="noopener">Sato AI Studio</a></span></div>
                     <div class="job-dates">Nov 2026 – Present</div>
                 </div>
-                <div class="job-sub">Koh Samui · a studio where a developer works side by side with an AI agent (Sato, openly AI) for businesses on Samui and Phuket</div>
+                <div class="job-sub">Koh Samui · AI studio for businesses on Samui and Phuket, where a developer works with an autonomous AI agent (Sato, openly AI)</div>
                 <ul>
-                    <li><strong>9 open-source MCP servers</strong> (Python), all listed in the official MCP Registry: company registry (GLEIF LEI), US product recalls (FDA, NHTSA, CPSC), US and UK import tariffs, open-source package due diligence, domain security, ATS job boards, OpenStreetMap places, FMCSA carriers, NPI providers.</li>
-                    <li><strong>5 public Apify Store actors</strong> for data feeds: ATS job boards, sitemap change monitoring, website screenshot and PDF capture, product recalls, LEI company lookup.</li>
-                    <li><strong>Customer-facing Telegram agent</strong> that decides per message whether to answer, capture a lead, ask a clarifying question or hand off to a human; answers only from the knowledge base, sends the owner a daily report, runs on any major LLM provider or a local model.</li>
+                    <li><strong>Designed and launched Sato, an autonomous AI agent embedded in day-to-day work</strong>: it sees, hears and speaks through the phone, works across Telegram, email, social media and databases, researches and verifies prospects, writes personalised outreach, publishes posts, and builds and ships tools; a human approves only money and risk.</li>
+                    <li><strong>Built a verified prospect base of 299 Samui and Phuket businesses</strong>: every record confirmed by loading the business's own website, emails taken only from its own pages; 54 personalised emails sent.</li>
+                    <li><strong>Shipped headless tools for other people's agents</strong>: 9 MCP servers in the official MCP Registry (company registries, product recalls, import tariffs, open-source due diligence, domain security, job boards, maps, carrier and healthcare-provider lookups) and 5 pay-per-event Apify Store actors (recalls monitor, LEI lookup, ATS jobs API, sitemap extractor, screenshot capture).</li>
+                    <li><strong>Built a customer-facing Telegram agent</strong> that routes every message (answer, capture a lead, clarify, hand off to a human), answers only from the knowledge base and reports to the owner daily; model-agnostic, including local models.</li>
                 </ul>
+                <ul class="tags"><li>Autonomous agent</li><li>Human-in-the-loop</li><li>MCP</li><li>Apify</li></ul>
             </div>
 
             <div class="job">
@@ -725,11 +799,11 @@
                 </div>
                 <div class="job-sub">SportTech &amp; HealthTech · AI coach for endurance sports (cycling, running, triathlon) · owner and sole developer</div>
                 <ul>
-                    <li><strong>AI orchestrator</strong> with a three-level hierarchy and structured output decides <em>Go / Modify / Skip</em> for each day's session from wellness data (sleep, resting HR, HRV), training load (CTL/ATL/TSB) and planned Intervals.icu events.</li>
-                    <li><strong>Vision pipeline</strong>: a photo of a plate becomes calories and macros in the athlete's food log; plus an AI coach chat and FIT workout import.</li>
-                    <li>Metabolic modelling, training-load engines and personalised nutrition algorithms that turn sports-science guidelines into a daily plan.</li>
+                    <li><strong>Built an AI orchestrator</strong> (three-level hierarchy, structured output) that decides <em>Go / Modify / Skip</em> for each day's training from wellness data (sleep, resting HR, HRV), training load (CTL/ATL/TSB) and planned Intervals.icu events.</li>
+                    <li><strong>Shipped a vision-LLM pipeline</strong> that turns a photo of a plate into calories and macros in the athlete's food log, alongside an AI coach chat and FIT workout import.</li>
+                    <li><strong>Engineered</strong> metabolic modelling, training-load engines and personalised nutrition algorithms that turn sports-science guidelines into a daily plan.</li>
                 </ul>
-                <ul class="tags"><li>FastAPI</li><li>PostgreSQL</li><li>Gemini</li><li>Intervals.icu API</li><li>FIT import</li><li>React Native · Expo</li><li>Docker · Caddy</li></ul>
+                <ul class="tags"><li>FastAPI</li><li>PostgreSQL</li><li>Vision LLM</li><li>Intervals.icu API</li><li>React Native · Expo</li><li>Docker · Caddy</li></ul>
             </div>
 
             <div class="job">
@@ -739,12 +813,12 @@
                 </div>
                 <div class="job-sub">PropTech &amp; B2B SaaS · API-first, multi-tenant property management system for boutique hotels (5–50 rooms) · owner and sole developer</div>
                 <ul>
-                    <li><strong>No double bookings by design</strong>: room inventory is protected by ordered row locks (<code>SELECT … FOR UPDATE</code>) inside one transaction; tenant data is isolated with PostgreSQL Row-Level Security.</li>
-                    <li><strong>Integrations</strong>: two-way OTA sync through Channex (400+ channels incl. Booking.com, Airbnb, Expedia), payments through Stripe Connect, HMAC-SHA256-signed webhooks with retries and delivery logs, PDF invoices, country packs (e.g. a Thai TM30 extension hook).</li>
-                    <li><strong>AI layer</strong> (GPT / Gemini) for guest communication, folio management and localised tax (Thailand VAT); LLM replies stress-tested thousands of times before going guest-facing.</li>
-                    <li>98 pytest modules in GitHub Actions CI; Celery workers, Sentry monitoring, Docker deploys behind Caddy.</li>
+                    <li><strong>Designed out double bookings</strong> at the database level: ordered row locks (<code>SELECT … FOR UPDATE</code>) in one transaction, tenant isolation through PostgreSQL Row-Level Security.</li>
+                    <li><strong>Built two-way OTA sync</strong> through Channex (400+ channels incl. Booking.com, Airbnb, Expedia), Stripe Connect payments, HMAC-SHA256-signed webhooks with retries and delivery logs, PDF invoices and country packs such as a Thai TM30 hook.</li>
+                    <li><strong>Added an LLM layer</strong> for guest communication, folio management and localised tax (Thailand VAT), stress-tested thousands of times before going guest-facing.</li>
+                    <li><strong>Backed it with 98 pytest modules</strong> in GitHub Actions CI, Celery workers, Sentry monitoring and Docker deploys behind Caddy.</li>
                 </ul>
-                <ul class="tags"><li>FastAPI</li><li>SQLAlchemy 2.0 async</li><li>PostgreSQL RLS</li><li>Celery · Redis</li><li>Stripe Connect</li><li>Channex</li><li>React 19</li><li>TypeScript</li><li>Vite · Tailwind</li><li>TanStack Query</li></ul>
+                <ul class="tags"><li>FastAPI</li><li>SQLAlchemy 2.0 async</li><li>PostgreSQL RLS</li><li>Celery · Redis</li><li>Stripe Connect</li><li>Channex</li><li>React 19</li><li>TypeScript</li><li>TanStack Query</li></ul>
             </div>
 
             <div class="job">
@@ -754,9 +828,9 @@
                 </div>
                 <div class="job-sub">Satva Samui Co. Ltd · yoga &amp; wellness resort, Koh Samui, Thailand</div>
                 <ul>
-                    <li><strong>Operations</strong>: F&amp;B, front desk, guest relations and P&amp;L; Thai legal compliance, licensing, banking and tax.</li>
-                    <li><strong>In-house software</strong>: booking engines, PMS integrations and automation tools that became the foundation of OpenPMS; a spa booking system (Django 5, DRF with JWT, PostgreSQL) with a drag-and-drop calendar and automatic conflict checks.</li>
-                    <li><strong>SatvaAI pipeline</strong>: parses VedaPulse diagnostic PDFs, retrieves from a knowledge base (RAG on pgvector) and writes personalised recommendations through a provider-agnostic LLM layer that works with major LLM providers.</li>
+                    <li><strong>Runs operations</strong> (F&amp;B, front desk, guest relations, P&amp;L) and Thai compliance: licensing, banking and tax.</li>
+                    <li><strong>Built the resort's own software</strong>: booking engines, PMS integrations and automation that became the foundation of OpenPMS, plus a spa booking system (Django 5, DRF/JWT, PostgreSQL) with drag-and-drop scheduling and automatic conflict checks.</li>
+                    <li><strong>Built SatvaAI</strong>, a RAG pipeline (pgvector) that reads VedaPulse diagnostic PDFs and writes personalised recommendations through a provider-agnostic LLM layer.</li>
                 </ul>
             </div>
 
@@ -771,7 +845,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="no-print">
             <h2>Open source · MCP servers</h2>
             <ul class="oss">
                 <li><a href="https://github.com/santex85/gleif-lei-mcp" target="_blank" rel="noopener">gleif-lei-mcp</a>Company search, LEI records, ownership</li>
