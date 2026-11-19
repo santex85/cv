@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexander Cheremikin - AI Agent Systems Architect</title>
-    <meta name="description" content="Alexander Cheremikin, AI Agent Systems Architect on Koh Samui, Thailand. Designs and runs multi-agent pipelines, builds LLM integrations and MCP servers, ships with Python/FastAPI and React.">
+    <meta name="description" content="Alexander Cheremikin, AI Agent Systems Architect on Koh Samui, Thailand. Builds multi-agent pipelines that don't degrade: quality gates at every step, humans only at key decisions, model-agnostic by design.">
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Alexander Cheremikin - AI Agent Systems Architect">
-    <meta property="og:description" content="Designs and runs multi-agent pipelines: 7 Claude agents in one delivery pipeline, running live with real users, ~4,000 backend tests on every pull request, 9 open-source MCP servers in the official MCP Registry.">
+    <meta property="og:description" content="Builds multi-agent pipelines that don't degrade: a quality gate at every step, humans only at key decisions, agents restartable from a knowledge base. 7 AI agents in one live pipeline with real users; 9 open-source MCP servers in the official MCP Registry.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -202,6 +202,8 @@
             border-radius: var(--radius);
             background: var(--card);
         }
+
+        .card.wide { grid-column: 1 / -1; }
 
         .card.feature {
             background: var(--accent-soft);
@@ -471,7 +473,7 @@
         <div class="eyebrow">Curriculum Vitae · Koh Samui, Thailand</div>
         <h1>Alexander Cheremikin</h1>
         <div class="role">AI Agent Systems Architect</div>
-        <p class="focus">Multi-agent pipelines · LLM integrations · MCP tooling · Python / FastAPI · React / TypeScript</p>
+        <p class="focus">Multi-agent pipelines that don't degrade · model-agnostic · MCP tooling · Python / FastAPI · React / TypeScript</p>
 
         <ul class="contacts">
             <li>
@@ -494,7 +496,7 @@
     </header>
 
     <div class="stats">
-        <div class="stat"><b>7</b><span>Claude agents in one delivery pipeline, running live with real users</span></div>
+        <div class="stat"><b>7</b><span>AI agents in one live pipeline, running with real users</span></div>
         <div class="stat"><b>~4,000</b><span>backend tests on every pull request, plus end-to-end scenarios</span></div>
         <div class="stat"><b>9</b><span>open-source MCP servers in the official MCP Registry</span></div>
         <div class="stat"><b>10 yrs</b><span>of hands-on programming</span></div>
@@ -504,13 +506,13 @@
         <section>
             <h2>Summary</h2>
             <p class="summary">
-                AI agent systems architect who <strong>designs and runs multi-agent pipelines</strong>. Today a <strong>team of 7 Claude agents</strong>, running live with real users, builds a web platform for an external client: one pull request per change, ~4,000 automated backend tests, releases every few days, and a human who decides only what must stay human.
-                Ten years of hands-on programming (Python/FastAPI, PostgreSQL, React/TypeScript), twelve years inside a hospitality business and <strong>9 open-source MCP servers</strong> in the official MCP Registry. Model-agnostic: Claude, OpenAI, Gemini, Ollama.
+                AI agent systems architect who builds <strong>multi-agent pipelines that don't degrade</strong>. Core experience: <strong>fighting degradation and error accumulation in long agent chains</strong> with a quality gate at every step, a human only at key decisions and agents restartable from the knowledge base to reset drift.
+                7 AI agents run in one live pipeline with real users today; the same mechanism is designed to scale to 10+. Model-agnostic by design. Ten years of hands-on programming (Python/FastAPI, React/TypeScript), twelve years inside a hospitality business and <strong>9 open-source MCP servers</strong> in the official MCP Registry.
             </p>
         </section>
 
         <section>
-            <h2>Agent delivery pipeline</h2>
+            <h2>Example pipeline</h2>
             <figure class="pipe">
                 <svg class="pipe-wide" viewBox="0 0 900 392" role="img" aria-label="Delivery pipeline: a human product owner works with an AI project manager; backend and client-portal agents open pull requests; cloud CI on ephemeral machines runs about 4,000 backend tests plus end-to-end scenarios; cross-review; QA agent with desktop and mobile screenshots; release approved by the human. Support roles: liaison, dispatcher, server agent, and the client's AI agent via a shared repository. Agents talk through file queues with watchers.">
                     <defs>
@@ -526,7 +528,7 @@
                     <text x="798" y="57" text-anchor="middle" class="pd-s">every decision logged</text>
                     <!-- team frame -->
                     <rect x="8" y="96" width="884" height="256" rx="14" class="pd-frame"/>
-                    <text x="100" y="118" class="pd-m">AI AGENT TEAM · CLAUDE</text>
+                    <text x="100" y="118" class="pd-m">AI AGENT TEAM</text>
                     <path d="M79 80 V128" class="pd-a" marker-start="url(#pw-arrow)" marker-end="url(#pw-arrow)"/>
                     <path d="M829 80 V148" class="pd-a pd-dash" marker-end="url(#pw-arrow)"/>
                     <text x="821" y="122" text-anchor="end" class="pd-m">approves</text>
@@ -590,7 +592,7 @@
                     <text x="24" y="92" class="pd-s">secrets &amp; personal data · external replies</text>
                     <text x="24" y="116" class="pd-m">→ EVERY DECISION IN A DECISION REGISTER</text>
                     <rect x="8" y="148" width="344" height="660" rx="14" class="pd-frame"/>
-                    <text x="24" y="168" class="pd-m">AI AGENT TEAM · CLAUDE</text>
+                    <text x="24" y="168" class="pd-m">AI AGENT TEAM</text>
                     <path d="M180 133 V174" class="pd-a" marker-start="url(#pt-arrow)" marker-end="url(#pt-arrow)"/>
                     <rect x="100" y="178" width="160" height="44" rx="10" class="pd-box pd-key"/>
                     <text x="180" y="205" text-anchor="middle" class="pd-t">AI project manager</text>
@@ -639,22 +641,27 @@
                     <text x="180" y="832" text-anchor="middle" class="pd-m">Tasks reach agents in 5–10 s,</text>
                     <text x="180" y="850" text-anchor="middle" class="pd-m">no manual forwarding</text>
                 </svg>
-                <figcaption>Current engagement: a web platform (SSO, client portal, deals, loyalty points) for an external client. The agents write and review the code; the human owns the decisions.</figcaption>
+                <figcaption>One example: a delivery pipeline running live with real users, building a web platform (SSO, client portal, deals, loyalty points) for an external client. The agents write and review the code; the human owns the decisions.</figcaption>
             </figure>
         </section>
 
         <section>
             <h2>Core competencies</h2>
             <div class="grid">
-                <div class="card feature">
+                <div class="card feature wide">
+                    <h3>Degradation &amp; error control in agent chains</h3>
+                    <p>The core skill: keeping long agent chains from drifting and piling up errors. A quality gate at every step (its own pull request, automated tests, cross-review, QA acceptance), a human only at key decision points with every decision in a register, any agent restartable from the knowledge base in about 10 minutes to reset accumulated drift, plus post-mortems and a risk register. Running live with 7 agents; designed to scale to 10+.</p>
+                    <ul class="tags"><li>Quality gates</li><li>Human-in-the-loop</li><li>Decision register</li><li>Agent restarts</li><li>Post-mortems</li><li>Risk register</li></ul>
+                </div>
+                <div class="card">
                     <h3>Multi-agent systems</h3>
-                    <p>Designing AI agent teams that ship software: role split, agent-to-agent messaging, pull-request quality gates and human decision gates; orchestration layers with structured outputs and per-message routing. Runs a 7-agent Claude team, live with real users.</p>
-                    <ul class="tags"><li>Claude</li><li>Agent orchestration</li><li>Human-in-the-loop</li><li>Structured output</li><li>Tool use</li><li>LangChain</li><li>LlamaIndex</li></ul>
+                    <p>Designing AI agent teams that ship software: role split, agent-to-agent messaging, orchestration layers with structured outputs and per-message routing. Model-agnostic: the model is a swappable part, not the architecture.</p>
+                    <ul class="tags"><li>Agent orchestration</li><li>Structured output</li><li>Tool use</li><li>LangChain</li><li>LlamaIndex</li></ul>
                 </div>
                 <div class="card">
                     <h3>LLM integration &amp; RAG</h3>
                     <p>Provider-agnostic LLM layers, retrieval over a company's own knowledge, document parsing and vision models that turn photos and PDFs into structured data.</p>
-                    <ul class="tags"><li>Claude</li><li>OpenAI</li><li>Gemini</li><li>Ollama</li><li>pgvector</li><li>Pinecone</li><li>Qdrant</li></ul>
+                    <ul class="tags"><li>Major LLM providers</li><li>Local models</li><li>pgvector</li><li>Pinecone</li><li>Qdrant</li></ul>
                 </div>
                 <div class="card">
                     <h3>MCP, tools &amp; data automation</h3>
@@ -689,13 +696,13 @@
                 </div>
                 <div class="job-sub">A web platform (SSO, client portal, deals, loyalty points) built by a team of AI agents · process architect and product owner on the delivery side; the agents write and review the code</div>
                 <ul>
-                    <li><strong>Designed and leads a 7-agent Claude team</strong> (project manager, backend, frontend, QA, liaison, dispatcher, server agent) working alongside the client's own AI agent through a shared repository.</li>
+                    <li><strong>Designed and leads a team of 7 AI agents</strong> (project manager, backend, frontend, QA, liaison, dispatcher, server agent) working alongside the client's own AI agent through a shared repository.</li>
                     <li><strong>Shipping every few days</strong>: 1.0.0 on 15 Nov 2026 and 1.0.1 on 18 Nov 2026, with the agent team running live tests with real users.</li>
                     <li><strong>Quality without hand-holding</strong>: every change is its own pull request, checked by ~4,000 backend tests plus end-to-end scenarios, cross-reviewed and accepted by the QA agent on desktop and mobile.</li>
                     <li><strong>Human time goes only to decisions</strong>: releases, merges, secrets and personal data, external replies, each logged in a decision register; tasks reach agents in 5–10 seconds with no manual forwarding.</li>
-                    <li><strong>Resilient and cost-aware</strong>: risk register and post-mortems; any agent can be rebuilt from the knowledge base in about 10 minutes; cloud and subscription spend kept under control.</li>
+                    <li><strong>Drift kept under control</strong>: any agent can be restarted from the knowledge base in about 10 minutes, backed by post-mortems and a risk register; cloud and subscription spend kept under control.</li>
                 </ul>
-                <ul class="tags"><li>Claude</li><li>Multi-agent delivery</li><li>Human-in-the-loop</li><li>CI · E2E</li><li>Decision register</li></ul>
+                <ul class="tags"><li>Model-agnostic</li><li>Multi-agent delivery</li><li>Human-in-the-loop</li><li>CI · E2E</li><li>Decision register</li></ul>
             </div>
 
             <div class="job">
@@ -707,7 +714,7 @@
                 <ul>
                     <li><strong>9 open-source MCP servers</strong> (Python), all listed in the official MCP Registry: company registry (GLEIF LEI), US product recalls (FDA, NHTSA, CPSC), US and UK import tariffs, open-source package due diligence, domain security, ATS job boards, OpenStreetMap places, FMCSA carriers, NPI providers.</li>
                     <li><strong>5 public Apify Store actors</strong> for data feeds: ATS job boards, sitemap change monitoring, website screenshot and PDF capture, product recalls, LEI company lookup.</li>
-                    <li><strong>Customer-facing Telegram agent</strong> that decides per message whether to answer, capture a lead, ask a clarifying question or hand off to a human; answers only from the knowledge base, sends the owner a daily report, runs on Claude, OpenAI or local Ollama.</li>
+                    <li><strong>Customer-facing Telegram agent</strong> that decides per message whether to answer, capture a lead, ask a clarifying question or hand off to a human; answers only from the knowledge base, sends the owner a daily report, runs on any major LLM provider or a local model.</li>
                 </ul>
             </div>
 
@@ -749,7 +756,7 @@
                 <ul>
                     <li><strong>Operations</strong>: F&amp;B, front desk, guest relations and P&amp;L; Thai legal compliance, licensing, banking and tax.</li>
                     <li><strong>In-house software</strong>: booking engines, PMS integrations and automation tools that became the foundation of OpenPMS; a spa booking system (Django 5, DRF with JWT, PostgreSQL) with a drag-and-drop calendar and automatic conflict checks.</li>
-                    <li><strong>SatvaAI pipeline</strong>: parses VedaPulse diagnostic PDFs, retrieves from a knowledge base (RAG on pgvector) and writes personalised recommendations through a provider-agnostic LLM layer (Claude, OpenAI, Gemini).</li>
+                    <li><strong>SatvaAI pipeline</strong>: parses VedaPulse diagnostic PDFs, retrieves from a knowledge base (RAG on pgvector) and writes personalised recommendations through a provider-agnostic LLM layer that works with major LLM providers.</li>
                 </ul>
             </div>
 
