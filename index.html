@@ -3,406 +3,630 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexander Cheremikin - CV</title>
+    <title>Alexander Cheremikin - AI Agent Systems Architect</title>
+    <meta name="description" content="Alexander Cheremikin, AI Agent Systems Architect on Koh Samui, Thailand. Designs and runs multi-agent pipelines, builds LLM integrations and MCP servers, ships with Python/FastAPI and React.">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Alexander Cheremikin - AI Agent Systems Architect">
+    <meta property="og:description" content="Designs and runs multi-agent pipelines: a team of 8 AI agents today, 9 open-source MCP servers in the official MCP Registry, 10 years of hands-on programming.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: hsl(220, 40%, 18%);
-            --secondary-color: hsl(220, 20%, 45%);
-            --accent-color: hsl(220, 60%, 35%);
-            --text-color: hsl(220, 25%, 15%);
-            --bg-color: hsl(0, 0%, 100%);
-            --light-bg: hsl(220, 30%, 97%);
-            --border-color: hsl(220, 15%, 90%);
+            --ink: hsl(222, 47%, 11%);
+            --ink-soft: hsl(222, 22%, 30%);
+            --muted: hsl(220, 12%, 46%);
+            --accent: hsl(243, 75%, 56%);
+            --accent-2: hsl(173, 80%, 32%);
+            --accent-soft: hsl(243, 90%, 97%);
+            --page: hsl(225, 30%, 96%);
+            --card: hsl(0, 0%, 100%);
+            --line: hsl(222, 20%, 90%);
+            --chip: hsl(222, 30%, 96%);
+            --radius: 14px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-            line-height: 1.5;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            color: var(--ink);
+            background: var(--page);
+            line-height: 1.55;
             padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .resume-container {
-            max-width: 850px;
+        a { color: inherit; }
+
+        .resume {
+            max-width: 940px;
             margin: 0 auto;
-            background-color: var(--bg-color);
-            padding: 50px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px -12px rgba(15, 23, 42, 0.12);
+            overflow: hidden;
         }
 
+        /* ---------- Header ---------- */
         header {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 25px;
-            margin-bottom: 25px;
+            padding: 44px 48px 32px;
+            background:
+                radial-gradient(1200px 300px at 100% -40%, hsla(243, 75%, 56%, 0.10), transparent 60%),
+                radial-gradient(800px 260px at -10% 0%, hsla(173, 80%, 32%, 0.08), transparent 60%);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .eyebrow {
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
+        .role {
+            margin-top: 8px;
+            font-size: clamp(1.1rem, 2.6vw, 1.35rem);
             font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .contact-info {
+        .focus {
+            margin-top: 6px;
+            color: var(--ink-soft);
+            font-size: 0.98rem;
+        }
+
+        .contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 22px;
+            list-style: none;
+        }
+
+        .contacts li {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 12px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            font-size: 0.86rem;
+            color: var(--ink-soft);
+        }
+
+        .contacts a { text-decoration: none; }
+        .contacts a:hover { color: var(--accent); }
+
+        .contacts svg {
+            width: 15px;
+            height: 15px;
+            flex: none;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ---------- Stats ---------- */
+        .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            font-size: 0.9rem;
-            color: var(--secondary-color);
+            grid-template-columns: repeat(4, 1fr);
+            border-bottom: 1px solid var(--line);
         }
 
-        .contact-info a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: color 0.2s ease;
+        .stat {
+            padding: 22px 24px;
+            border-right: 1px solid var(--line);
         }
 
-        .contact-info a:hover {
-            color: var(--accent-color);
+        .stat:last-child { border-right: none; }
+
+        .stat b {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            color: var(--accent);
         }
 
-        section {
-            margin-bottom: 25px;
+        .stat:nth-child(even) b { color: var(--accent-2); }
+
+        .stat span {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.84rem;
+            color: var(--ink-soft);
+            line-height: 1.4;
         }
+
+        /* ---------- Body ---------- */
+        main { padding: 8px 48px 44px; }
+
+        section { margin-top: 34px; }
 
         h2 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 6px;
-            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: var(--muted);
+            margin-bottom: 16px;
         }
 
-        .profile-lead {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            font-weight: 500;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            text-align: justify;
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--line);
         }
 
-        .profile-highlights {
-            list-style-type: none;
-            padding-left: 0;
+        .summary {
+            font-size: 1.07rem;
+            line-height: 1.7;
+            color: var(--ink);
         }
 
-        .profile-highlights li {
-            font-size: 0.92rem;
-            color: var(--text-color);
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
+        .summary strong { font-weight: 700; }
 
-        .profile-highlights li::before {
-            content: "→";
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .skills-grid {
+        /* Competencies */
+        .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 14px;
         }
 
-        .skill-category {
-            font-size: 0.9rem;
+        .card {
+            padding: 18px 20px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--card);
         }
 
-        .skill-category strong {
-            color: var(--primary-color);
-            display: block;
-            margin-bottom: 4px;
+        .card.feature {
+            background: var(--accent-soft);
+            border-color: hsla(243, 75%, 56%, 0.25);
         }
 
-        .experience-item {
-            margin-bottom: 20px;
-        }
-
-        .experience-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 700;
             margin-bottom: 6px;
         }
 
-        .job-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .job-company {
-            font-size: 0.95rem;
-            color: var(--accent-color);
-            font-weight: 500;
-        }
-
-        .job-dates {
-            font-size: 0.85rem;
-            color: var(--secondary-color);
-            font-weight: 500;
-        }
-
-        .experience-item ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .experience-item li {
+        .card p {
             font-size: 0.9rem;
-            color: var(--text-color);
-            position: relative;
-            padding-left: 15px;
-            margin-bottom: 4px;
+            color: var(--ink-soft);
         }
 
-        .experience-item li::before {
-            content: "•";
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .edu-item {
-            margin-bottom: 12px;
-        }
-
-        .edu-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .edu-header {
+        .tags {
             display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+            list-style: none;
+        }
+
+        .tags li {
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.72rem;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: var(--chip);
+            color: var(--ink-soft);
+            border: 1px solid var(--line);
+        }
+
+        /* Experience */
+        .job {
+            position: relative;
+            padding: 0 0 26px 26px;
+            border-left: 2px solid var(--line);
+        }
+
+        .job:last-child { padding-bottom: 4px; }
+
+        .job::before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 3px solid var(--accent);
+        }
+
+        .job-head {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 4px;
+            gap: 4px 16px;
         }
 
-        .edu-title {
-            font-size: 0.95rem;
+        .job-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .job-org {
+            color: var(--accent);
             font-weight: 600;
-            color: var(--primary-color);
         }
 
-        .edu-details {
-            font-size: 0.9rem;
-            color: var(--secondary-color);
-            font-style: italic;
+        .job-org a { text-decoration: none; }
+        .job-org a:hover { text-decoration: underline; }
+
+        .job-dates {
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.78rem;
+            color: var(--muted);
+            white-space: nowrap;
         }
 
-        .edu-impact {
-            font-size: 0.85rem;
-            color: var(--text-color);
-            margin-top: 4px;
-            padding-left: 10px;
-            border-left: 2px solid var(--border-color);
+        .job-sub {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin-top: 2px;
         }
+
+        .job ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .job li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 6px;
+            font-size: 0.92rem;
+            color: var(--ink);
+        }
+
+        .job li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 6px;
+            height: 6px;
+            border-radius: 2px;
+            background: var(--accent-2);
+        }
+
+        .job li strong { font-weight: 600; }
+
+        .job .tags { margin-top: 10px; }
+
+        .job .tags li {
+            padding: 3px 9px;
+            margin: 0;
+            font-size: 0.72rem;
+            color: var(--ink-soft);
+        }
+
+        .job .tags li::before { content: none; }
+
+        /* Open source list */
+        .oss {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            list-style: none;
+        }
+
+        .oss li {
+            font-size: 0.84rem;
+            padding: 10px 12px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            color: var(--ink-soft);
+        }
+
+        .oss a {
+            display: block;
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.78rem;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 2px;
+        }
+
+        .oss a:hover { text-decoration: underline; }
+
+        code {
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.85em;
+            padding: 1px 5px;
+            border-radius: 5px;
+            background: var(--chip);
+        }
+
+        .note {
+            margin-top: 10px;
+            font-size: 0.84rem;
+            color: var(--muted);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .plain {
+            font-size: 0.92rem;
+            color: var(--ink-soft);
+        }
+
+        .plain strong { color: var(--ink); }
+
+        footer {
+            margin-top: 34px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* ---------- Responsive ---------- */
+        @media screen and (max-width: 760px) {
+            body { padding: 0; background: var(--card); }
+            .resume { border: none; border-radius: 0; box-shadow: none; }
+            header { padding: 32px 16px 24px; }
+            main { padding: 0 16px 32px; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .stat { padding: 18px 16px; }
+            .stat:nth-child(2) { border-right: none; }
+            .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+            .grid, .two-col { grid-template-columns: 1fr; }
+            .oss { grid-template-columns: 1fr 1fr; }
+            .summary { font-size: 1rem; }
+        }
+
+        @media screen and (max-width: 420px) {
+            .oss { grid-template-columns: 1fr; }
+            .contacts li { font-size: 0.82rem; }
+        }
+
+        /* ---------- Print / PDF ---------- */
+        @page { size: A4; margin: 10mm 11mm 10mm; }
 
         @media print {
-            body {
-                background-color: #fff;
-                padding: 0;
-            }
-
-            .resume-container {
-                box-shadow: none;
-                border: none;
-                padding: 0;
-                max-width: 100%;
-            }
-
-            .contact-info a {
-                color: var(--secondary-color) !important;
-            }
+            html { font-size: 11px; }
+            body { background: #fff; padding: 0; line-height: 1.4; }
+            .resume { max-width: none; border: none; border-radius: 0; box-shadow: none; overflow: visible; }
+            header { padding: 0 0 14px; background: none; }
+            h1 { font-size: 2.4rem; }
+            .contacts { margin-top: 12px; }
+            main { padding: 0; }
+            .stats { border: 1px solid var(--line); border-radius: 10px; margin-top: 12px; }
+            .stat { padding: 10px 14px; }
+            .stat b { font-size: 1.7rem; }
+            section { margin-top: 16px; }
+            h2 { margin-bottom: 10px; }
+            .grid { gap: 8px; }
+            .card { padding: 10px 14px; }
+            .job { padding-bottom: 12px; }
+            .job ul { margin-top: 6px; }
+            .job li { margin-bottom: 3px; }
+            .card, .job-head, .job li, .oss li, .stat { break-inside: avoid; }
+            .oss { gap: 6px; }
+            .oss li { padding: 6px 10px; }
+            footer { margin-top: 16px; padding-top: 10px; }
+            h2 { break-after: avoid; }
+            .role { color: var(--accent); background: none; }
+            * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
     </style>
 </head>
 <body>
 
-<div class="resume-container">
+<div class="resume">
     <header>
+        <div class="eyebrow">Curriculum Vitae · Koh Samui, Thailand</div>
         <h1>Alexander Cheremikin</h1>
-        <div class="subtitle">Tech-Driven CEO | Lead AI Architect & B2B SaaS Founder</div>
-        <div class="contact-info">
-            <div>📍 Koh Samui, Thailand</div>
-            <div>📧 <a href="mailto:santex85@gmail.com">santex85@gmail.com</a></div>
-            <div>📱 +66 94 309 3892</div>
-            <div>🔗 <a href="https://www.linkedin.com/in/alexandr-cheremikin-423a381b5/" target="_blank">LinkedIn</a></div>
-            <div>🌐 <a href="https://open-pms.com" target="_blank">open-pms.com</a></div>
-            <div>🌐 <a href="https://tsspro.ai" target="_blank">tsspro.ai</a></div>
-        </div>
+        <div class="role">AI Agent Systems Architect</div>
+        <p class="focus">Multi-agent pipelines · LLM integrations · MCP tooling · Python / FastAPI · React / TypeScript</p>
+
+        <ul class="contacts">
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                Koh Samui, Thailand (UTC+7)
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <a href="mailto:santex85@gmail.com">santex85@gmail.com</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+                <a href="tel:+66943093892">+66 94 309 3892</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+                <a href="https://www.linkedin.com/in/alexandr-cheremikin-423a381b5/" target="_blank" rel="noopener">LinkedIn</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+                <a href="https://github.com/santex85" target="_blank" rel="noopener">github.com/santex85</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                <a href="https://santex85.github.io/sato/" target="_blank" rel="noopener">Sato AI Studio</a>
+            </li>
+        </ul>
     </header>
 
-    <section>
-        <h2>Professional Profile</h2>
-        <div class="profile-content">
-            <p class="profile-lead">
-                Highly analytical <strong>Tech-Driven CEO</strong>, B2B SaaS Founder, and <strong>Lead AI Architect</strong> with a unique 12-year trajectory leading a premium wellness resort (Satva Samui) alongside hands-on engineering of advanced AI and PropTech platforms.
+    <div class="stats">
+        <div class="stat"><b>8</b><span>AI agents working in the team today</span></div>
+        <div class="stat"><b>9</b><span>open-source MCP servers in the official MCP Registry</span></div>
+        <div class="stat"><b>10 yrs</b><span>of hands-on programming</span></div>
+        <div class="stat"><b>12 yrs</b><span>inside a hospitality business on Koh Samui</span></div>
+    </div>
+
+    <main>
+        <section>
+            <h2>Summary</h2>
+            <p class="summary">
+                AI agent systems architect who <strong>designs and runs multi-agent pipelines</strong>, currently operating a <strong>team of 8 AI agents</strong>, and ships agent tooling, including <strong>9 open-source MCP servers</strong> listed in the official MCP Registry.
+                Ten years of hands-on programming, today in Python/FastAPI, PostgreSQL and React/TypeScript, and twelve years inside a hospitality business mean the agents I build plug into real operations: bookings, payments, guest messaging and data.
+                Model-agnostic (Claude, OpenAI, Gemini, Ollama), with grounded answers and a human hand-off built in by design.
             </p>
-            <ul class="profile-highlights">
-                <li><strong>C-Suite & Code Bridge:</strong> A rare leader who seamlessly translates complex operational pain points into scalable SaaS architecture, communicating on equal terms with both VC investors and system engineers.</li>
-                <li><strong>Safety-Critical AI Rigor:</strong> Expert in deploying autonomous agentic AI workflows (LangChain, RAG) with a strict, railway-grade engineering mindset that enforces 100% factual reliability and eliminates hallucinations.</li>
-                <li><strong>Disciplined Leadership:</strong> Exceptional operational execution, crisis management, and long-term strategic focus, reinforced by a military sergeant background and competitive endurance road cycling.</li>
-            </ul>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2>Technical Stack & Key Competencies</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <strong>AI Engineering & GenAI</strong>
-                Gemini API, OpenAI API, Anthropic, LangChain, LlamaIndex, Agentic AI Workflows, RAG, Prompt Engineering, Vector Databases (Pinecone, Qdrant), LLM Stress-Testing & Reliability Evaluation.
-            </div>
-            <div class="skill-category">
-                <strong>Core Software Engineering</strong>
-                Python (Expert), FastAPI (High-Performance APIs), Django (Complex Systems), Go, Vue.js, PostgreSQL (Expert in database-level transactional concurrency & locking).
-            </div>
-            <div class="skill-category">
-                <strong>DevOps & Infrastructure</strong>
-                GitHub Actions (CI/CD workflows, repository management), Docker, Ubuntu Server administration, Shell Scripting.
-            </div>
-            <div class="skill-category">
-                <strong>Executive & Product Leadership</strong>
-                Full-Cycle B2B SaaS Product Management, P&L & Budget Management, Legal & Financial Compliance (Thailand), Agile/Scrum, Investor Relations & Fundraising.
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Professional Experience</h2>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <span class="job-title">Founder & Lead AI Architect</span><br>
-                    <span class="job-company">TSSPro | SportTech & HealthTech</span>
+        <section>
+            <h2>Core competencies</h2>
+            <div class="grid">
+                <div class="card feature">
+                    <h3>Multi-agent systems</h3>
+                    <p>Breaking work into agent roles and wiring them into one pipeline: orchestration, hierarchical decision layers, structured outputs, per-message routing and human hand-off. Runs a team of 8 AI agents.</p>
+                    <ul class="tags"><li>Agent orchestration</li><li>Structured output</li><li>Tool use</li><li>LangChain</li><li>LlamaIndex</li></ul>
                 </div>
-                <div class="job-dates">2024 – Present</div>
-            </div>
-            <ul>
-                <li><strong>AI/Nutrition Architecture:</strong> Designed and built an intelligent AI platform at the intersection of generative AI and sports science for cyclic endurance sports (cycling, running, triathlon).</li>
-                <li><strong>Algorithm Development:</strong> Engineered AI-native metabolic modeling, training load calculation engines, and personalized sports nutrition algorithms to optimize athlete recovery and performance.</li>
-                <li><strong>Tech Stack:</strong> Architected backend APIs in Python and FastAPI, utilizing LLMs to synthesize scientific training guidelines into actionable daily plans.</li>
-            </ul>
-        </div>
-        
-        <div class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <span class="job-title">Founder & Principal Systems Architect</span><br>
-                    <span class="job-company">OpenPMS | PropTech & B2B SaaS</span>
+                <div class="card">
+                    <h3>LLM integration &amp; RAG</h3>
+                    <p>Provider-agnostic LLM layers, retrieval over a company's own knowledge, document parsing and vision models that turn photos and PDFs into structured data.</p>
+                    <ul class="tags"><li>Claude</li><li>OpenAI</li><li>Gemini</li><li>Ollama</li><li>pgvector</li><li>Pinecone</li><li>Qdrant</li></ul>
                 </div>
-                <div class="job-dates">2021 – Present</div>
-            </div>
-            <ul>
-                <li><strong>Product Creation & Engineering:</strong> Architected and developed a modern, cloud-based B2B Property Management System (PMS) designed to disrupt traditional vendor monopolies.</li>
-                <li><strong>Concurrency & Database Design:</strong> Designed a high-performance room grid inventory system utilizing database-level transaction locking to guarantee absolute data consistency and prevent double bookings.</li>
-                <li><strong>Enterprise Integrations:</strong> Developed API-first integrations with Stripe Connect (payment processing) and Channex (two-way synchronization with 400+ OTA channels like Booking.com, Airbnb, Expedia).</li>
-                <li><strong>AI Integration & Automation:</strong> Integrated GPT/Gemini-based AI agents to automate guest communication, folio management, and localized tax engines (e.g., Thailand VAT compliance).</li>
-                <li><strong>Hardcore AI Stress-Testing:</strong> Conducted thousands of stress-tests on integrated LLMs under tight constraints to ensure zero-hallucination outputs in public-facing messaging.</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <span class="job-title">Owner & Chief Executive Officer (CEO)</span><br>
-                    <span class="job-company">Satva Samui Yoga & Wellness Resort | Koh Samui, Thailand</span>
+                <div class="card">
+                    <h3>MCP, tools &amp; data automation</h3>
+                    <p>MCP servers that give agents verified public data, Apify actors and scrapers at polite rates, Telegram bots, webhooks and API integrations.</p>
+                    <ul class="tags"><li>Model Context Protocol</li><li>Apify</li><li>Telegram Bot API</li><li>Webhooks (HMAC)</li></ul>
                 </div>
-                <div class="job-dates">2014 – Present</div>
-            </div>
-            <ul>
-                <li><strong>Operational Leadership:</strong> Built and managed Satva Samui, growing it into a leading luxury yoga and wellness resort on Koh Samui. Oversee daily operations, F&B, Front Desk, guest relations, and financial performance (P&L).</li>
-                <li><strong>Software Innovation:</strong> Personally designed and developed custom booking engines, PMS integrations, and internal business automation tools, transforming resort operations and laying the architectural foundation for OpenPMS.</li>
-                <li><strong>International Compliance:</strong> Successfully navigate Thai legal compliance, licensing, digital banking integration, and tax regulations.</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <span class="job-title">Sergeant / Squad Leader</span><br>
-                    <span class="job-company">Military Service | Ground Forces</span>
+                <div class="card">
+                    <h3>AI reliability &amp; red-teaming</h3>
+                    <p>Stress-testing LLMs before they talk to customers: answers only from the knowledge base, no invented prices or facts, escalation rules for anything outside it.</p>
+                    <ul class="tags"><li>LLM evaluation</li><li>Red-teaming</li><li>Guardrails</li><li>Prompt engineering</li></ul>
                 </div>
-                <div class="job-dates">2 Years Service</div>
+                <div class="card">
+                    <h3>Engineering stack</h3>
+                    <p>Async Python back ends with PostgreSQL done properly (row-level security, row locking), typed React front ends, mobile apps and the CI/CD and servers to run them.</p>
+                    <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy 2.0 async</li><li>PostgreSQL</li><li>Celery · Redis</li><li>Django · DRF</li><li>Go</li><li>React 19</li><li>TypeScript</li><li>Vue.js</li><li>React Native · Expo</li><li>Docker</li><li>GitHub Actions</li><li>Caddy · nginx</li><li>Cloudflare</li><li>Sentry</li></ul>
+                </div>
+                <div class="card">
+                    <h3>Product &amp; business leadership</h3>
+                    <p>Full-cycle B2B SaaS product ownership, P&amp;L and budgets, Thai legal and financial compliance, Agile/Scrum, investor relations. Fractional AI lead (CAIO-as-a-Service) for Thai SMBs.</p>
+                    <ul class="tags"><li>Product strategy</li><li>P&amp;L</li><li>Fractional CAIO</li></ul>
+                </div>
             </div>
-            <ul>
-                <li><strong>Leadership & Discipline:</strong> Commanded a squad, managed personnel training, strict discipline, and field safety operations.</li>
-                <li><strong>Crisis Management:</strong> Developed strong foundation in quick decision-making under stressful environments, rigorous organization, and clear command, skills seamlessly applied to leading technical teams.</li>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">Founder · <span class="job-org"><a href="https://santex85.github.io/sato/" target="_blank" rel="noopener">Sato AI Studio</a></span></div>
+                    <div class="job-dates">Nov 2026 – Present</div>
+                </div>
+                <div class="job-sub">Koh Samui · a studio where a developer works side by side with an AI agent (Sato, openly AI) for businesses on Samui and Phuket</div>
+                <ul>
+                    <li><strong>9 open-source MCP servers</strong> (Python), all listed in the official MCP Registry: company registry (GLEIF LEI), US product recalls (FDA, NHTSA, CPSC), US and UK import tariffs, open-source package due diligence, domain security, ATS job boards, OpenStreetMap places, FMCSA carriers, NPI providers.</li>
+                    <li><strong>5 public Apify Store actors</strong> for data feeds: ATS job boards, sitemap change monitoring, website screenshot and PDF capture, product recalls, LEI company lookup.</li>
+                    <li><strong>Customer-facing Telegram agent</strong> that decides per message whether to answer, capture a lead, ask a clarifying question or hand off to a human; answers only from the knowledge base, sends the owner a daily report, runs on Claude, OpenAI or local Ollama.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">Founder &amp; Lead AI Architect · <span class="job-org"><a href="https://github.com/santex85/tssproAI" target="_blank" rel="noopener">TSSPro</a></span></div>
+                    <div class="job-dates">2024 – Present</div>
+                </div>
+                <div class="job-sub">SportTech &amp; HealthTech · AI coach for endurance sports (cycling, running, triathlon) · owner and sole developer</div>
+                <ul>
+                    <li><strong>AI orchestrator</strong> with a three-level hierarchy and structured output decides <em>Go / Modify / Skip</em> for each day's session from wellness data (sleep, resting HR, HRV), training load (CTL/ATL/TSB) and planned Intervals.icu events.</li>
+                    <li><strong>Vision pipeline</strong>: a photo of a plate becomes calories and macros in the athlete's food log; plus an AI coach chat and FIT workout import.</li>
+                    <li>Metabolic modelling, training-load engines and personalised nutrition algorithms that turn sports-science guidelines into a daily plan.</li>
+                </ul>
+                <ul class="tags"><li>FastAPI</li><li>PostgreSQL</li><li>Gemini</li><li>Intervals.icu API</li><li>FIT import</li><li>React Native · Expo</li><li>Docker · Caddy</li></ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">Founder &amp; Principal Systems Architect · <span class="job-org"><a href="https://github.com/santex85/openPMS" target="_blank" rel="noopener">OpenPMS</a></span></div>
+                    <div class="job-dates">2021 – Present</div>
+                </div>
+                <div class="job-sub">PropTech &amp; B2B SaaS · API-first, multi-tenant property management system for boutique hotels (5–50 rooms) · owner and sole developer</div>
+                <ul>
+                    <li><strong>No double bookings by design</strong>: room inventory is protected by ordered row locks (<code>SELECT … FOR UPDATE</code>) inside one transaction; tenant data is isolated with PostgreSQL Row-Level Security.</li>
+                    <li><strong>Integrations</strong>: two-way OTA sync through Channex (400+ channels incl. Booking.com, Airbnb, Expedia), payments through Stripe Connect, HMAC-SHA256-signed webhooks with retries and delivery logs, PDF invoices, country packs (e.g. a Thai TM30 extension hook).</li>
+                    <li><strong>AI layer</strong> (GPT / Gemini) for guest communication, folio management and localised tax (Thailand VAT); LLM replies stress-tested thousands of times before going guest-facing.</li>
+                    <li>98 pytest modules in GitHub Actions CI; Celery workers, Sentry monitoring, Docker deploys behind Caddy.</li>
+                </ul>
+                <ul class="tags"><li>FastAPI</li><li>SQLAlchemy 2.0 async</li><li>PostgreSQL RLS</li><li>Celery · Redis</li><li>Stripe Connect</li><li>Channex</li><li>React 19</li><li>TypeScript</li><li>Vite · Tailwind</li><li>TanStack Query</li></ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">Director (since 2018) · Lead Developer (2014–2018) · <span class="job-org">Satva Samui</span></div>
+                    <div class="job-dates">2014 – Present</div>
+                </div>
+                <div class="job-sub">Satva Samui Co. Ltd · yoga &amp; wellness resort, Koh Samui, Thailand</div>
+                <ul>
+                    <li><strong>Operations</strong>: F&amp;B, front desk, guest relations and P&amp;L; Thai legal compliance, licensing, banking and tax.</li>
+                    <li><strong>In-house software</strong>: booking engines, PMS integrations and automation tools that became the foundation of OpenPMS; a spa booking system (Django 5, DRF with JWT, PostgreSQL) with a drag-and-drop calendar and automatic conflict checks.</li>
+                    <li><strong>SatvaAI pipeline</strong>: parses VedaPulse diagnostic PDFs, retrieves from a knowledge base (RAG on pgvector) and writes personalised recommendations through a provider-agnostic LLM layer (Claude, OpenAI, Gemini).</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">Sergeant / Squad Leader · <span class="job-org">Ground Forces</span></div>
+                    <div class="job-dates">2 years of service</div>
+                </div>
+                <ul>
+                    <li>Led a squad: personnel training, discipline and field safety; decisions under pressure.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Open source · MCP servers</h2>
+            <ul class="oss">
+                <li><a href="https://github.com/santex85/gleif-lei-mcp" target="_blank" rel="noopener">gleif-lei-mcp</a>Company search, LEI records, ownership</li>
+                <li><a href="https://github.com/santex85/us-recalls-mcp" target="_blank" rel="noopener">us-recalls-mcp</a>FDA, NHTSA and CPSC recalls</li>
+                <li><a href="https://github.com/santex85/tariff-duty-mcp" target="_blank" rel="noopener">tariff-duty-mcp</a>US HTS and UK duty rates</li>
+                <li><a href="https://github.com/santex85/oss-audit-mcp" target="_blank" rel="noopener">oss-audit-mcp</a>Licences, Scorecard, OSV vulns</li>
+                <li><a href="https://github.com/santex85/domain-intel-mcp" target="_blank" rel="noopener">domain-intel-mcp</a>DNS, TLS, SPF/DMARC, HSTS</li>
+                <li><a href="https://github.com/santex85/ats-jobs-mcp" target="_blank" rel="noopener">ats-jobs-mcp</a>Greenhouse, Lever, Ashby jobs</li>
+                <li><a href="https://github.com/santex85/osm-poi-mcp" target="_blank" rel="noopener">osm-poi-mcp</a>OpenStreetMap POI and geocoding</li>
+                <li><a href="https://github.com/santex85/fmcsa-carrier-mcp" target="_blank" rel="noopener">fmcsa-carrier-mcp</a>US carrier and broker vetting</li>
+                <li><a href="https://github.com/santex85/npi-provider-mcp" target="_blank" rel="noopener">npi-provider-mcp</a>US healthcare provider lookup</li>
             </ul>
-        </div>
-    </section>
+            <p class="note">All nine are published in the official MCP Registry under <code>io.github.santex85/*</code>.</p>
+        </section>
 
-    <section>
-        <h2>Education & Special Training</h2>
-        
-        <div class="edu-item">
-            <div class="edu-header">
-                <span class="edu-title">Technical Railway Education</span>
-                <span class="job-dates">Specialty: Locomotive Driver</span>
+        <section>
+            <h2>Languages</h2>
+            <div class="two-col plain">
+                <div><strong>Russian</strong> · native</div>
+                <div><strong>English</strong> · professional working proficiency (technical discussions and team leadership)</div>
             </div>
-            <div class="edu-details">Vocational & Practical Systems Training</div>
-            <p class="edu-impact">
-                <strong>Systemic Impact on IT Rigor:</strong> Operating heavy, safety-critical locomotive systems instills an absolute commitment to protocols, extreme attention to mechanical details, and a zero-tolerance approach to systems failure. In software engineering, this is directly translated into bulletproof code, robust error handling, and strict resistance to software hallucinations.
-            </p>
-        </div>
+        </section>
 
-        <div class="edu-item">
-            <div class="edu-header">
-                <span class="edu-title">Secondary Education</span>
-                <span class="job-dates">Graduated: 2002</span>
-            </div>
-            <div class="edu-details">School №11, Belogorsk, Amur Oblast, Russia</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Languages</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <strong>Russian:</strong> Native
-            </div>
-            <div class="skill-category">
-                <strong>English:</strong> Professional Working Proficiency (Technical discussions & team leadership)
-            </div>
-        </div>
-    </section>
+        <footer>Updated November 2026 · Code samples: github.com/santex85</footer>
+    </main>
 </div>
 
 </body>
