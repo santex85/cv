@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexander Cheremikin - AI Agent Systems Architect</title>
-    <meta name="description" content="Alexander Cheremikin, AI Agent Systems Architect on Koh Samui, Thailand. Builds autonomous multi-agent systems that run live and don't degrade: quality gates at every hand-off, human-in-the-loop only where it matters, model-agnostic by design.">
+    <title>Alexander Cheremikin - Product &amp; Engineering Manager, AI Implementation Lead</title>
+    <meta name="description" content="Alexander Cheremikin, Koh Samui, Thailand: product manager, engineering manager, tech lead and AI implementation lead. Builds and runs multi-agent AI pipelines that don't degrade; 10+ years running a hospitality business.">
     <meta property="og:type" content="profile">
-    <meta property="og:title" content="Alexander Cheremikin - AI Agent Systems Architect">
-    <meta property="og:description" content="Autonomous multi-agent systems that run live and don't degrade. 7 AI agents in one live pipeline with real users, ~4,000 backend tests gating every pull request, 9 MCP servers in the official MCP Registry.">
+    <meta property="og:title" content="Alexander Cheremikin - Product &amp; Engineering Manager, AI Implementation Lead">
+    <meta property="og:description" content="Multi-agent AI pipelines that run live and don't degrade: a team of 7 LLM agents, ~4,000 automated backend tests, releases every few days. 10+ years running a hospitality business on Koh Samui.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -188,6 +188,8 @@
         }
 
         .summary strong { font-weight: 700; }
+
+        .summary + .summary { margin-top: 12px; }
 
         /* Competencies */
         .grid {
@@ -378,6 +380,12 @@
             gap: 14px;
         }
 
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 24px;
+        }
+
         .plain {
             font-size: 0.92rem;
             color: var(--ink-soft);
@@ -464,7 +472,7 @@
             .stat { border-bottom: 1px solid var(--line); }
             .stat:nth-child(even) { border-right: none; }
             .stat:last-child { grid-column: 1 / -1; border-right: none; border-bottom: none; }
-            .grid, .two-col { grid-template-columns: 1fr; }
+            .grid, .two-col, .facts { grid-template-columns: 1fr; }
             .oss { grid-template-columns: 1fr 1fr; }
             .summary { font-size: 1rem; }
             .pull-quote blockquote { padding: 52px 18px 18px; }
@@ -478,48 +486,53 @@
         }
 
         /* ---------- Print / PDF ---------- */
-        @page { size: A4; margin: 9mm 10mm 9mm; }
+        @page { size: A4; margin: 10mm 11mm 10mm; }
 
         @media print {
-            html { font-size: 10.2px; }
-            body { background: #fff; padding: 0; line-height: 1.4; }
+            html { font-size: 12px; }
+            body { background: #fff; padding: 0; line-height: 1.34; }
             .resume { max-width: none; border: none; border-radius: 0; box-shadow: none; overflow: visible; }
-            header { padding: 0 0 14px; background: none; }
-            h1 { font-size: 2.4rem; }
-            .contacts { margin-top: 12px; }
-            main { padding: 0; }
-            .stats { border: 1px solid var(--line); border-radius: 10px; margin-top: 12px; }
-            .stat { padding: 10px 14px; }
-            .stat b { font-size: 1.7rem; }
-            section { margin-top: 13px; }
-            h2 { margin-bottom: 10px; }
-            .grid { gap: 8px; }
-            .card { padding: 10px 14px; }
-            .job { padding-bottom: 12px; }
-            .job ul { margin-top: 6px; }
-            .job li { margin-bottom: 2px; }
-            .card, .job-head, .job li, .oss li, .stat, .pipe { break-inside: avoid; }
-            .oss { gap: 6px; }
-            .oss li { padding: 6px 10px; }
-            footer { margin-top: 16px; padding-top: 10px; }
-            h2 { break-after: avoid; }
+            header { padding: 0 0 8px; background: none; }
+            h1 { font-size: 2.2rem; }
             .role { color: var(--accent); background: none; }
-            .no-print, main > footer { display: none; }
-            .grid { grid-template-columns: 1fr; gap: 6px; }
-            .card .tags { margin-top: 6px; }
-            .card:not(.feature) { display: flex; align-items: baseline; gap: 12px; padding: 3px 4px 5px; border: none; border-bottom: 1px solid var(--line); border-radius: 0; }
-            .card:not(.feature) h3 { flex: 0 0 26%; font-size: 0.95rem; margin: 0; }
-            .card:not(.feature) p { display: none; }
-            .card:not(.feature) .tags { margin-top: 0; }
-            .pipe { max-width: 66%; margin: 0 auto; }
-            .pipe figcaption { display: none; }
-            .job .tags { display: none; }
-            .job-sub { margin-top: 0; }
-            .pull-quote blockquote { padding: 14px 18px 12px 48px; break-inside: avoid; }
+            .contacts { margin-top: 10px; gap: 6px; }
+            .contacts li { padding: 3px 10px; font-size: 0.9rem; }
+            main { padding: 0; display: flex; flex-direction: column; }
+            main > .projects { order: 1; }
+            main > .pipe-section, main > .pull-quote { order: 2; }
+            main > .late { order: 3; }
+            .stats { border: 1px solid var(--line); border-radius: 10px; margin-top: 10px; }
+            .stat { padding: 6px 12px; }
+            .stat b { font-size: 1.5rem; }
+            .stat span { font-size: 0.85rem; margin-top: 5px; }
+            section { margin-top: 10px; }
+            h2 { margin-bottom: 6px; break-after: avoid; }
+            .facts { gap: 4px 20px; }
+            .summary { font-size: 9.4pt; line-height: 1.42; }
+            .summary + .summary { margin-top: 6px; }
+            .grid { gap: 8px; }
+            .card { padding: 8px 12px; }
+            .card p { font-size: 9pt; }
+            .tags li { font-size: 0.74rem; padding: 2px 7px; }
+            .tags { gap: 4px; }
+            .skills .grid { grid-template-columns: 1fr; gap: 0; }
+            .skills .card { display: flex; align-items: baseline; gap: 12px; padding: 5px 2px; border: none; border-bottom: 1px solid var(--line); border-radius: 0; }
+            .skills .card h3 { flex: 0 0 19%; font-size: 9pt; margin: 0; }
+            .skills .card .tags { margin-top: 0; }
+            .pipe { max-width: 70%; margin: 0 auto; }
+            .pipe figcaption { font-size: 0.9rem; margin-top: 4px; }
+            .pull-quote blockquote { padding: 10px 16px 10px 46px; }
             .pull-quote blockquote::before { font-size: 3rem; left: 12px; }
-            .pull-quote p { font-size: 0.92rem; line-height: 1.45; }
-            .summary { font-size: 1rem; line-height: 1.55; }
-            .job { padding-bottom: 9px; }
+            .pull-quote p { font-size: 9pt; line-height: 1.4; }
+            .pull-quote p + p { margin-top: 6px; }
+            .pull-quote footer { margin-top: 8px; }
+            .job { padding-bottom: 8px; }
+            .job ul { margin-top: 5px; }
+            .job li { font-size: 9pt; margin-bottom: 2px; }
+            .job-sub { font-size: 0.9rem; }
+            .plain { font-size: 9pt; }
+            .card, .job-head, .job li, .stat, .pipe, .pull-quote blockquote, .skills .card { break-inside: avoid; }
+            .no-print, main > footer { display: none; }
             * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
     </style>
@@ -530,13 +543,21 @@
     <header>
         <div class="eyebrow">Curriculum Vitae · Koh Samui, Thailand</div>
         <h1>Alexander Cheremikin</h1>
-        <div class="role">AI Agent Systems Architect</div>
-        <p class="focus">Autonomous multi-agent pipelines that run live and don't degrade · agent infrastructure &amp; MCP · personal AI agents · model-agnostic</p>
+        <div class="role">Product Manager · Engineering Manager · Tech Lead · AI Implementation Lead</div>
+        <p class="focus">Multi-agent AI pipelines that run live and don't degrade · personal AI agents · hospitality and wellness tech</p>
 
         <ul class="contacts">
             <li>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-                Koh Samui, Thailand (UTC+7)
+                Koh Samui, Thailand · remote, open to long business trips
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+                <a href="tel:+66943093892">+66 94 309 38 92</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <a href="mailto:santex85@gmail.com">santex85@gmail.com</a>
             </li>
             <li>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
@@ -554,26 +575,49 @@
     </header>
 
     <div class="stats">
-        <div class="stat"><b>7</b><span>AI agents in one live pipeline with real users</span></div>
-        <div class="stat"><b>~4,000</b><span>backend tests gating every pull request</span></div>
-        <div class="stat"><b>299</b><span>businesses verified by an autonomous prospecting agent</span></div>
-        <div class="stat"><b>9</b><span>MCP servers in the official MCP Registry</span></div>
-        <div class="stat"><b>10 yrs</b><span>of hands-on programming</span></div>
+        <div class="stat"><b>7</b><span>LLM agents in one live delivery pipeline</span></div>
+        <div class="stat"><b>~4,000</b><span>backend tests run automatically on every change</span></div>
+        <div class="stat"><b>~300</b><span>businesses found and verified by his personal AI agent</span></div>
+        <div class="stat"><b>9</b><span>open-source MCP servers in the official MCP Registry</span></div>
+        <div class="stat"><b>10+ yrs</b><span>running a hospitality business</span></div>
     </div>
 
     <main>
         <section>
-            <h2>Summary</h2>
+            <h2>Profile</h2>
             <p class="summary">
-                I build <strong>autonomous multi-agent systems that run live and don't degrade</strong>. Long agent chains drift and compound errors; mine are built not to: every hand-off passes a quality gate, humans step in only at the decisions that matter, and any agent restarts clean from its knowledge base in about 10 minutes.
-                Live today: <strong>7 AI agents</strong> shipping a client platform with real users, and <strong>Sato</strong>, an autonomous agent that prospects, writes outreach and ships tools, asking its human only about money and risk. Model-agnostic by design, backed by 10 years of hands-on engineering and <strong>9 MCP servers</strong> in the official registry.
+                A manager and technical leader working where business, software development and AI meet: <strong>10+ years running a hospitality business</strong> and its operations, <strong>6+ years of hands-on Python web development</strong>. I specialise in product management, building development processes and putting AI to work, from CRM and booking systems to <strong>orchestrating multi-agent AI pipelines</strong>.
+            </p>
+            <p class="summary">
+                Since 2026 I have been building and running a team of AI agents that develops a commercial platform for an external client: the agents write and review the code, while I own the process architecture, the product and the key decisions. Releases ship every few days, with about 4,000 backend tests run automatically. My core strength is keeping long agent chains from degrading and piling up errors, and the approach is not tied to any single model provider. Deep domain expertise in wellness and Ayurveda: I translate business needs into technology and take products from an idea to a working production system.
             </p>
         </section>
 
         <section>
+            <h2>What I do best</h2>
+            <div class="grid">
+                <div class="card feature wide">
+                    <h3>Multi-agent pipelines that don't degrade</h3>
+                    <p>Long agent chains drift and pile up errors. I build the controls that stop it: every change as its own pull request, ~4,000 automated backend tests plus end-to-end scenarios, cross-review and QA acceptance; a human only for production releases, merges, access and personal data, and external communication, with every decision in a register; any agent rebuilt from the knowledge base in about 10 minutes; incident post-mortems and a risk register.</p>
+                    <ul class="tags"><li>Quality gates</li><li>Human-in-the-loop</li><li>Decision register</li><li>Post-mortems</li><li>Model-agnostic</li></ul>
+                </div>
+                <div class="card feature">
+                    <h3>Personal AI agents, deeply embedded into your processes</h3>
+                    <p>An AI agent that works as a member of the team rather than a chat window: eyes, ears and a voice through a smartphone, its own email, a client database, social media and messengers. It runs the routine on its own and brings the human only the decisions that involve money or risk. Live example: Sato.</p>
+                    <ul class="tags"><li>Autonomy with guardrails</li><li>Voice</li><li>Messengers</li></ul>
+                </div>
+                <div class="card feature">
+                    <h3>Fractional Chief AI Officer (CAIO-as-a-Service)</h3>
+                    <p>For small and medium businesses in Thailand, primarily in hospitality and wellness: process audit, AI adoption plan and ongoing support.</p>
+                    <ul class="tags"><li>Process audit</li><li>AI adoption plan</li><li>Ongoing support</li></ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="pipe-section">
             <h2>Example pipeline</h2>
             <figure class="pipe">
-                <svg class="pipe-wide" viewBox="0 0 900 392" role="img" aria-label="Delivery pipeline: a human product owner works with an AI project manager; backend and client-portal agents open pull requests; cloud CI on ephemeral machines runs about 4,000 backend tests plus end-to-end scenarios; cross-review; QA agent with desktop and mobile screenshots; release approved by the human. Support roles: liaison, dispatcher, server agent, and the client's AI agent via a shared repository. Agents talk through file queues with watchers.">
+                <svg class="pipe-wide" viewBox="0 0 900 392" role="img" aria-label="Delivery pipeline: a human product owner works with an AI project manager; backend and frontend agents open pull requests; cloud CI on ephemeral machines runs about 4,000 backend tests plus end-to-end scenarios; cross-review; QA agent with desktop and mobile screenshots; release approved by the human. Support roles: liaison, dispatcher, server agent, and the client's AI agent via a shared repository. Agents talk through file queues with watchers.">
                     <defs>
                         <marker id="pw-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="pd-head"/></marker>
                     </defs>
@@ -601,8 +645,8 @@
                     <text x="218" y="152" text-anchor="middle" class="pd-t">Backend</text>
                     <text x="218" y="168" text-anchor="middle" class="pd-s">developer agent</text>
                     <rect x="156" y="190" width="124" height="46" rx="10" class="pd-box"/>
-                    <text x="218" y="210" text-anchor="middle" class="pd-t">Client portal</text>
-                    <text x="218" y="226" text-anchor="middle" class="pd-s">frontend agent</text>
+                    <text x="218" y="210" text-anchor="middle" class="pd-t">Frontend</text>
+                    <text x="218" y="226" text-anchor="middle" class="pd-s">developer agent</text>
                     <path d="M280 155 H298 V213 H280" class="pd-a"/>
                     <path d="M298 184 H344" class="pd-a" marker-end="url(#pw-arrow)"/>
                     <text x="321" y="177" text-anchor="middle" class="pd-m">PR</text>
@@ -640,7 +684,7 @@
                     <text x="450" y="378" text-anchor="middle" class="pd-m">Tasks reach agents in 5–10 s, no manual forwarding</text>
                 </svg>
 
-                <svg class="pipe-tall" viewBox="0 0 360 862" role="img" aria-label="Delivery pipeline, vertical layout: human product owner, AI project manager, backend and client-portal agents, pull request, cloud CI with about 4,000 backend tests plus end-to-end scenarios, cross-review, QA agent, release approved by the human; support roles: liaison, dispatcher, server agent, client's AI agent.">
+                <svg class="pipe-tall" viewBox="0 0 360 862" role="img" aria-label="Delivery pipeline, vertical layout: human product owner, AI project manager, backend and frontend agents, pull request, cloud CI with about 4,000 backend tests plus end-to-end scenarios, cross-review, QA agent, release approved by the human; support roles: liaison, dispatcher, server agent, client's AI agent.">
                     <defs>
                         <marker id="pt-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="pd-head"/></marker>
                     </defs>
@@ -661,8 +705,8 @@
                     <text x="99" y="267" text-anchor="middle" class="pd-t">Backend</text>
                     <text x="99" y="284" text-anchor="middle" class="pd-s">developer agent</text>
                     <rect x="186" y="246" width="150" height="50" rx="10" class="pd-box"/>
-                    <text x="261" y="267" text-anchor="middle" class="pd-t">Client portal</text>
-                    <text x="261" y="284" text-anchor="middle" class="pd-s">frontend agent</text>
+                    <text x="261" y="267" text-anchor="middle" class="pd-t">Frontend</text>
+                    <text x="261" y="284" text-anchor="middle" class="pd-s">developer agent</text>
                     <path d="M99 296 V308 H261 V296" class="pd-a"/>
                     <path d="M180 308 V336" class="pd-a" marker-end="url(#pt-arrow)"/>
                     <text x="190" y="327" class="pd-m">PR</text>
@@ -700,7 +744,7 @@
                     <text x="180" y="832" text-anchor="middle" class="pd-m">Tasks reach agents in 5–10 s,</text>
                     <text x="180" y="850" text-anchor="middle" class="pd-m">no manual forwarding</text>
                 </svg>
-                <figcaption>One example: a delivery pipeline running live with real users, building a web platform (SSO, client portal, deals, loyalty points) for an external client. The agents write and review the code; the human owns the decisions.</figcaption>
+                <figcaption>One example: the delivery pipeline of a commercial platform built for an external client, running live with real users. The agents write and review the code; the human owns the key decisions.</figcaption>
             </figure>
         </section>
 
@@ -712,136 +756,137 @@
             </blockquote>
         </section>
 
-        <section>
-            <h2>Core competencies</h2>
-            <div class="grid">
-                <div class="card feature wide">
-                    <h3>Agent chains that don't degrade</h3>
-                    <p>Long agent chains drift and compound errors. I engineer that out: a quality gate at every hand-off (its own pull request, ~4,000 backend tests, cross-review, QA acceptance), human-in-the-loop only for releases, merges, secrets and external replies, every decision in a register, and any agent restartable from its knowledge base in about 10 minutes to reset drift. Post-mortems and a risk register close the loop. Live with 7 agents; designed to scale to 10+.</p>
-                    <ul class="tags"><li>Quality gates</li><li>Human-in-the-loop</li><li>Decision register</li><li>Agent restarts</li><li>Post-mortems</li><li>Risk register</li></ul>
+        <section class="projects">
+            <h2>Key projects</h2>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">Process Architect &amp; Product Owner, delivery side · <span class="job-org">Commercial platform for an external client</span></div>
+                    <div class="job-dates">2026 – Present</div>
                 </div>
-                <div class="card feature">
-                    <h3>Personal AI agents, deeply embedded into your processes</h3>
-                    <p>Design and set up personal agents wired into how a person or business actually works: eyes, ears and a voice through the phone, plus messengers, email, social media, databases and the browser. The agent handles routine on its own and asks the human only about money and risk. Live example: Sato.</p>
-                    <ul class="tags"><li>Autonomous agents</li><li>Voice</li><li>Guardrails</li><li>Human-in-the-loop</li></ul>
+                <div class="job-sub">Under NDA · built by a team of AI agents; production and staging environments</div>
+                <ul>
+                    <li><strong>AI agent team.</strong> Designed and run a team of 7 LLM agents: AI project manager, backend developer, frontend developer, QA tester, liaison (Telegram, voice-message transcription, hourly reports), dispatcher (status summary, full test runs, daily log) and a server agent working under operator control; integrated with the client's own AI agent through a shared repository. Agents communicate through file queues with watchers: a task reaches its assignee in 5–10 seconds, with no manual hand-offs.</li>
+                    <li><strong>Delivery pipeline.</strong> Every change is a separate pull request; automated checks on ephemeral cloud machines run about 4,000 backend tests plus end-to-end scenarios; cross-review at the backend/frontend boundary; QA acceptance with screenshots on desktop and mobile. Releases ship every few days.</li>
+                    <li><strong>Governance and control.</strong> A human decides only production releases, merges into the main branch, access and personal data, and external communication; every such decision is recorded in a decision register. Daily log, risk register, incident post-mortems and role playbooks; any agent can be rebuilt from the knowledge base in about 10 minutes.</li>
+                    <li><strong>Cost control.</strong> Cloud test runs and subscription limits kept under control; an independent code audit by a stronger model, once, before risky releases.</li>
+                </ul>
+                <ul class="tags"><li>FastAPI</li><li>PostgreSQL</li><li>Nuxt 4 · Vuetify</li><li>OpenID Connect · OAuth</li><li>Docker</li><li>GitHub Actions</li><li>Caddy (TLS)</li></ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">Designer &amp; Operator · <span class="job-org"><a href="https://santex85.github.io/sato/" target="_blank" rel="noopener">Sato</a></span></div>
+                    <div class="job-dates">Nov 2026 – Present</div>
                 </div>
-                <div class="card">
-                    <h3>Agentic systems &amp; orchestration</h3>
-                    <p>Autonomous agents with clear roles, tool use and structured outputs; agent-to-agent messaging that delivers a task in 5–10 seconds; per-message routing (answer, capture a lead, clarify, hand off). Model-agnostic: the model is a swappable part, not the architecture.</p>
-                    <ul class="tags"><li>Agent orchestration</li><li>Tool use</li><li>Structured output</li><li>LangChain</li><li>LlamaIndex</li></ul>
+                <div class="job-sub">Koh Samui · a personal AI agent embedded in a small studio's work (Sato AI Studio)</div>
+                <ul>
+                    <li>Set up an AI agent that works as a member of a small studio rather than as a chat window: eyes, ears and a voice through a smartphone, its own email, a client database, social media accounts and messengers.</li>
+                    <li>The agent finds and verifies potential clients (about 300 businesses on Koh Samui and Phuket so far, each checked against the business's own website), writes personalised outreach, publishes posts and answers customers in LINE in Thai and English.</li>
+                    <li><strong>Autonomy with guardrails:</strong> the agent runs the routine on its own and brings the human only the decisions that involve money or risk.</li>
+                    <li><strong>Data tools for other AI agents:</strong> 9 open-source MCP servers listed in the official MCP Registry and 5 pay-per-event actors in the Apify Store.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">Founder, Product &amp; Tech Lead · <span class="job-org"><a href="https://github.com/santex85/openPMS" target="_blank" rel="noopener">OpenPMS</a></span></div>
+                    <div class="job-dates">2026 · being wound down</div>
                 </div>
-                <div class="card">
-                    <h3>Agent infrastructure &amp; MCP</h3>
-                    <p>Headless tools for other people's agents: 9 MCP servers in the official MCP Registry and 5 pay-per-event Apify Store actors built on official public data.</p>
-                    <ul class="tags"><li>Model Context Protocol</li><li>Apify</li><li>Webhooks (HMAC)</li><li>Telegram Bot API</li></ul>
+                <div class="job-sub">open-pms.com · open-source, cloud-based, API-first property management system for boutique hotels with 5–50 rooms, adapted to the Southeast Asian market</div>
+                <ul>
+                    <li>Backend on FastAPI, SQLAlchemy 2.0 (async) and PostgreSQL 16; multi-tenancy via tenant_id and Row-Level Security. Frontend on React 19, TypeScript, Vite and TanStack Query.</li>
+                    <li>Core modules: room availability, bookings, folios and transactions, rate plans, role-based access (owner, manager, front desk, housekeeping), webhooks signed with HMAC-SHA256.</li>
+                    <li>MVP and landing page released in April 2026; integration with external APIs and booking channels worked out.</li>
+                    <li>Roadmap of AI features, including analysis of guest reviews in Thai, and a data-processing architecture compliant with Thailand's PDPA: cloud models plus local inference for sensitive data.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">Founder · <span class="job-org">tsspro.tech</span></div>
+                    <div class="job-dates">Completed and closed</div>
                 </div>
-                <div class="card">
-                    <h3>LLM integration &amp; RAG</h3>
-                    <p>Provider-agnostic LLM layers, RAG over a company's own knowledge, vision and document pipelines that turn photos and PDFs into structured data.</p>
-                    <ul class="tags"><li>Major LLM providers</li><li>Local models</li><li>pgvector</li><li>Pinecone</li><li>Qdrant</li></ul>
+                <ul>
+                    <li>AI-based cycling training analytics platform: processing of training metrics and endurance data.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">Project Author · <span class="job-org"><a href="https://santex85.github.io/RideSamui/" target="_blank" rel="noopener">RideSamui</a></span></div>
+                    <div class="job-dates">Prototype stage</div>
                 </div>
-                <div class="card">
-                    <h3>Evals, red-teaming &amp; guardrails</h3>
-                    <p>LLM output stress-tested thousands of times before it faces customers: answers only from the knowledge base, no invented prices or facts, escalation for anything outside it.</p>
-                    <ul class="tags"><li>Evals</li><li>Red-teaming</li><li>Guardrails</li><li>Prompt engineering</li></ul>
-                </div>
-                <div class="card">
-                    <h3>Product &amp; business leadership</h3>
-                    <p>Full-cycle B2B SaaS product ownership, P&amp;L and budgets, Thai legal and financial compliance, Agile/Scrum, investor relations; fractional AI lead (CAIO-as-a-Service) for Thai SMBs.</p>
-                    <ul class="tags"><li>Product strategy</li><li>P&amp;L</li><li>Fractional CAIO</li></ul>
-                </div>
-                <div class="card wide">
-                    <h3>Engineering stack</h3>
-                    <p>Async Python back ends with PostgreSQL done properly (row-level security, row locking), typed React front ends, mobile apps, and the CI/CD and servers to run them.</p>
-                    <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy 2.0 async</li><li>PostgreSQL</li><li>Celery · Redis</li><li>Django · DRF</li><li>Go</li><li>React 19</li><li>TypeScript</li><li>Vue.js</li><li>React Native · Expo</li><li>Docker</li><li>GitHub Actions</li><li>Caddy · nginx</li><li>Cloudflare</li><li>Sentry</li></ul>
-                </div>
+                <ul>
+                    <li>Prototype of free real-time GPS tracking of Koh Samui's songthaew route taxis for drivers and passengers.</li>
+                    <li>B2B landing page and video scripts for a transport cooperative; talks with the island's tourism association.</li>
+                </ul>
             </div>
         </section>
 
-        <section>
-            <h2>Experience</h2>
+        <section class="late">
+            <h2>Work experience</h2>
 
             <div class="job">
                 <div class="job-head">
-                    <div class="job-title">AI Delivery Architect &amp; Product Owner (contract) · <span class="job-org">External client</span></div>
-                    <div class="job-dates">2026 – Present</div>
+                    <div class="job-title">Director, Owner, General Manager · <span class="job-org">Satva Samui Co., Ltd.</span></div>
+                    <div class="job-dates">2020 – Present</div>
                 </div>
-                <div class="job-sub">Web platform (SSO, client portal, deals, loyalty points) built by autonomous AI agents · process architect and product owner on the delivery side; the agents write and review the code</div>
+                <div class="job-sub">Satva Samui Yoga &amp; Wellness Resort · Koh Samui, Thailand</div>
                 <ul>
-                    <li><strong>Designed and runs a 7-agent delivery pipeline</strong> (project manager, backend, frontend, QA, liaison, dispatcher, server agent), integrated with the client's own AI agent through a shared repository and running live tests with real users.</li>
-                    <li><strong>Shipped two releases three days apart</strong>: 1.0.0 on 15 Nov 2026 and 1.0.1 on 18 Nov 2026, on a cadence of every few days.</li>
-                    <li><strong>Gated every change</strong>: its own pull request, ~4,000 backend tests plus end-to-end scenarios on ephemeral cloud machines, cross-review at the backend/frontend boundary, QA acceptance with desktop and mobile screenshots.</li>
-                    <li><strong>Cut human involvement to four decision types</strong> (releases, merges to main, secrets and personal data, external replies), each logged in a decision register; tasks reach agents in 5–10 seconds with no manual forwarding.</li>
-                    <li><strong>Engineered drift control</strong>: any agent restarts clean from the knowledge base in about 10 minutes; post-mortems, a risk register and a one-off independent code audit by a stronger model before risky releases; cloud and subscription spend kept under control.</li>
-                </ul>
-                <ul class="tags"><li>Agentic delivery</li><li>Human-in-the-loop</li><li>Quality gates</li><li>CI · E2E</li><li>Model-agnostic</li></ul>
-            </div>
-
-            <div class="job">
-                <div class="job-head">
-                    <div class="job-title">Founder · <span class="job-org"><a href="https://santex85.github.io/sato/" target="_blank" rel="noopener">Sato AI Studio</a></span></div>
-                    <div class="job-dates">Nov 2026 – Present</div>
-                </div>
-                <div class="job-sub">Koh Samui · AI studio for businesses on Samui and Phuket, where a developer works with an autonomous AI agent (Sato, openly AI)</div>
-                <ul>
-                    <li><strong>Designed and launched Sato, an autonomous AI agent embedded in day-to-day work</strong>: it sees, hears and speaks through the phone, works across Telegram, email, social media and databases, researches and verifies prospects, writes personalised outreach, publishes posts, and builds and ships tools; a human approves only money and risk.</li>
-                    <li><strong>Built a verified prospect base of 299 Samui and Phuket businesses</strong>: every record confirmed by loading the business's own website, emails taken only from its own pages; 54 personalised emails sent.</li>
-                    <li><strong>Shipped headless tools for other people's agents</strong>: 9 MCP servers in the official MCP Registry (company registries, product recalls, import tariffs, open-source due diligence, domain security, job boards, maps, carrier and healthcare-provider lookups) and 5 pay-per-event Apify Store actors (recalls monitor, LEI lookup, ATS jobs API, sitemap extractor, screenshot capture).</li>
-                    <li><strong>Built a customer-facing Telegram agent</strong> that routes every message (answer, capture a lead, clarify, hand off to a human), answers only from the knowledge base and reports to the owner daily; model-agnostic, including local models.</li>
-                </ul>
-                <ul class="tags"><li>Autonomous agent</li><li>Human-in-the-loop</li><li>MCP</li><li>Apify</li></ul>
-            </div>
-
-            <div class="job">
-                <div class="job-head">
-                    <div class="job-title">Founder &amp; Lead AI Architect · <span class="job-org"><a href="https://github.com/santex85/tssproAI" target="_blank" rel="noopener">TSSPro</a></span></div>
-                    <div class="job-dates">2024 – Present</div>
-                </div>
-                <div class="job-sub">SportTech &amp; HealthTech · AI coach for endurance sports (cycling, running, triathlon) · owner and sole developer</div>
-                <ul>
-                    <li><strong>Built an AI orchestrator</strong> (three-level hierarchy, structured output) that decides <em>Go / Modify / Skip</em> for each day's training from wellness data (sleep, resting HR, HRV), training load (CTL/ATL/TSB) and planned Intervals.icu events.</li>
-                    <li><strong>Shipped a vision-LLM pipeline</strong> that turns a photo of a plate into calories and macros in the athlete's food log, alongside an AI coach chat and FIT workout import.</li>
-                    <li><strong>Engineered</strong> metabolic modelling, training-load engines and personalised nutrition algorithms that turn sports-science guidelines into a daily plan.</li>
-                </ul>
-                <ul class="tags"><li>FastAPI</li><li>PostgreSQL</li><li>Vision LLM</li><li>Intervals.icu API</li><li>React Native · Expo</li><li>Docker · Caddy</li></ul>
-            </div>
-
-            <div class="job">
-                <div class="job-head">
-                    <div class="job-title">Founder &amp; Principal Systems Architect · <span class="job-org"><a href="https://github.com/santex85/openPMS" target="_blank" rel="noopener">OpenPMS</a></span></div>
-                    <div class="job-dates">2021 – Present</div>
-                </div>
-                <div class="job-sub">PropTech &amp; B2B SaaS · API-first, multi-tenant property management system for boutique hotels (5–50 rooms) · owner and sole developer</div>
-                <ul>
-                    <li><strong>Designed out double bookings</strong> at the database level: ordered row locks (<code>SELECT … FOR UPDATE</code>) in one transaction, tenant isolation through PostgreSQL Row-Level Security.</li>
-                    <li><strong>Built two-way OTA sync</strong> through Channex (400+ channels incl. Booking.com, Airbnb, Expedia), Stripe Connect payments, HMAC-SHA256-signed webhooks with retries and delivery logs, PDF invoices and country packs such as a Thai TM30 hook.</li>
-                    <li><strong>Added an LLM layer</strong> for guest communication, folio management and localised tax (Thailand VAT), stress-tested thousands of times before going guest-facing.</li>
-                    <li><strong>Backed it with 98 pytest modules</strong> in GitHub Actions CI, Celery workers, Sentry monitoring and Docker deploys behind Caddy.</li>
-                </ul>
-                <ul class="tags"><li>FastAPI</li><li>SQLAlchemy 2.0 async</li><li>PostgreSQL RLS</li><li>Celery · Redis</li><li>Stripe Connect</li><li>Channex</li><li>React 19</li><li>TypeScript</li><li>TanStack Query</li></ul>
-            </div>
-
-            <div class="job">
-                <div class="job-head">
-                    <div class="job-title">Director (since 2018) · Lead Developer (2014–2018) · <span class="job-org">Satva Samui</span></div>
-                    <div class="job-dates">2014 – Present</div>
-                </div>
-                <div class="job-sub">Satva Samui Co. Ltd · yoga &amp; wellness resort, Koh Samui, Thailand</div>
-                <ul>
-                    <li><strong>Runs operations</strong> (F&amp;B, front desk, guest relations, P&amp;L) and Thai compliance: licensing, banking and tax.</li>
-                    <li><strong>Built the resort's own software</strong>: booking engines, PMS integrations and automation that became the foundation of OpenPMS, plus a spa booking system (Django 5, DRF/JWT, PostgreSQL) with drag-and-drop scheduling and automatic conflict checks.</li>
-                    <li><strong>Built SatvaAI</strong>, a RAG pipeline (pgvector) that reads VedaPulse diagnostic PDFs and writes personalised recommendations through a provider-agnostic LLM layer.</li>
+                    <li>Operational and strategic management of the resort and a team of up to 20 people.</li>
+                    <li>Developed and introduced company-wide service and operational accounting standards.</li>
+                    <li>Increased the average spend per guest through comprehensive wellness and Ayurvedic programmes and the technology that supports them.</li>
+                    <li>Digitised booking, introduced a CRM and ensured compliance with local regulations.</li>
+                    <li>Marketing mechanics and technical specifications for the resort website: promotions module, booking form, web analytics.</li>
+                    <li>Resort development: land plot assessment, contracts and partner relations.</li>
                 </ul>
             </div>
 
             <div class="job">
                 <div class="job-head">
-                    <div class="job-title">Sergeant / Squad Leader · <span class="job-org">Ground Forces</span></div>
-                    <div class="job-dates">2 years of service</div>
+                    <div class="job-title">Python Developer (Full-Stack / Automation) · <span class="job-org">Satva Samui</span></div>
+                    <div class="job-dates">2014 – 2020</div>
                 </div>
                 <ul>
-                    <li>Led a squad: personnel training, discipline and field safety; decisions under pressure.</li>
+                    <li>Developed and maintained Python web applications.</li>
+                    <li>Built integrations with external services, payment and operational systems.</li>
+                    <li>Automated internal business processes and built APIs for client-facing and internal solutions.</li>
                 </ul>
+            </div>
+        </section>
+
+        <section class="skills late">
+            <h2>Skills and stack</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Management and product</h3>
+                    <ul class="tags"><li>Product management</li><li>Engineering management</li><li>Teams of up to 20 people</li><li>Hybrid humans + AI agents team</li><li>Decision and risk registers</li><li>Incident post-mortems</li><li>Release cycle</li><li>Business process analysis</li><li>CRM and service standards rollout</li></ul>
+                </div>
+                <div class="card">
+                    <h3>AI and automation</h3>
+                    <ul class="tags"><li>Multi-agent systems and dev pipelines</li><li>Personal AI agents</li><li>Models and agent environments from multiple providers</li><li>MCP (9 published servers)</li><li>Local LLM inference</li><li>Speech recognition</li><li>Telegram and LINE bots</li><li>Model cost estimation and selection</li><li>Mobile automation and data collection</li></ul>
+                </div>
+                <div class="card">
+                    <h3>Backend and data</h3>
+                    <ul class="tags"><li>Python</li><li>FastAPI</li><li>Django</li><li>DRF</li><li>SQLAlchemy 2.0</li><li>PostgreSQL (incl. RLS)</li><li>OpenID Connect / OAuth</li><li>REST API design</li><li>Webhooks</li></ul>
+                </div>
+                <div class="card">
+                    <h3>Frontend</h3>
+                    <ul class="tags"><li>Vue.js</li><li>Nuxt 4</li><li>Vuetify</li><li>React 19</li><li>TypeScript</li><li>Vite</li><li>TanStack Query</li></ul>
+                </div>
+                <div class="card">
+                    <h3>Quality</h3>
+                    <ul class="tags"><li>~4,000 automated backend tests</li><li>End-to-end scenarios</li><li>Cross-review</li><li>Visual acceptance on desktop and mobile</li></ul>
+                </div>
+                <div class="card">
+                    <h3>Infrastructure</h3>
+                    <ul class="tags"><li>Docker</li><li>GitHub Actions</li><li>Ephemeral cloud runners</li><li>Linux</li><li>Nginx</li><li>Caddy</li><li>Cloudflare (incl. Workers)</li><li>Git / GitHub</li></ul>
+                </div>
+                <div class="card wide">
+                    <h3>Industry</h3>
+                    <ul class="tags"><li>Hospitality</li><li>Wellness and Ayurveda</li><li>PMS and booking channels</li><li>PDPA</li></ul>
+                </div>
             </div>
         </section>
 
@@ -861,15 +906,17 @@
             <p class="note">All nine are published in the official MCP Registry under <code>io.github.santex85/*</code>.</p>
         </section>
 
-        <section>
-            <h2>Languages</h2>
-            <div class="two-col plain">
-                <div><strong>Russian</strong> · native</div>
-                <div><strong>English</strong> · professional working proficiency (technical discussions and team leadership)</div>
+        <section class="late">
+            <h2>Education, languages and more</h2>
+            <div class="facts plain">
+                <div><strong>Education</strong> · vocational technical college diploma: assistant locomotive driver, rolling stock repair fitter, electrician (grade 4, cleared for up to 27 kV)</div>
+                <div><strong>Languages</strong> · Russian (native), English (B1, Intermediate)</div>
+                <div><strong>Work format</strong> · open to full-time employment, project-based collaboration (milestone-based payment preferred) and long business trips</div>
+                <div><strong>Interests</strong> · road cycling at an advanced amateur level (training metrics analysis); music: guitar, bass, drums and my own band</div>
             </div>
         </section>
 
-        <footer>Updated November 2026 · Code samples: github.com/santex85</footer>
+        <footer>Updated November 2026 · github.com/santex85</footer>
     </main>
 </div>
 
