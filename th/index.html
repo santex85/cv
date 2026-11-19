@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Cheremikin – ผู้จัดการผลิตภัณฑ์และวิศวกรรม, หัวหน้าการนำ AI มาใช้งาน</title>
+    <meta name="description" content="Alexander Cheremikin, เกาะสมุย ประเทศไทย: product manager, engineering manager, tech lead และ AI implementation lead เขาสร้าง pipelines ของ AI ที่ผลิตโค้ดที่ใช้งานได้จริง และ AI Agents สำหรับงานทุกประเภท มีประสบการณ์ดำเนินธุรกิจบริการด้านการท่องเที่ยวมากกว่า 10 ปี">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Alexander Cheremikin – ผู้จัดการผลิตภัณฑ์และวิศวกรรม, หัวหน้าการนำ AI มาใช้งาน">
+    <meta property="og:description" content="ผมสร้าง pipelines ที่ผลิตโค้ดที่ใช้งานได้จริง และสร้าง AI Agents สำหรับงานทุกประเภท ดำเนินธุรกิจบริการด้านการท่องเที่ยวบนเกาะสมุยมาแล้วกว่า 10 ปี">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: hsl(222, 47%, 11%);
+            --ink-soft: hsl(222, 22%, 30%);
+            --muted: hsl(220, 12%, 46%);
+            --accent: hsl(243, 75%, 56%);
+            --accent-2: hsl(173, 80%, 32%);
+            --accent-soft: hsl(243, 90%, 97%);
+            --page: hsl(225, 30%, 96%);
+            --card: hsl(0, 0%, 100%);
+            --line: hsl(222, 20%, 90%);
+            --chip: hsl(222, 30%, 96%);
+            --radius: 14px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans Thai', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            color: var(--ink);
+            background: var(--page);
+            line-height: 1.55;
+            padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; }
+
+        .resume {
+            max-width: 940px;
+            margin: 0 auto;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px -12px rgba(15, 23, 42, 0.12);
+            overflow: hidden;
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            padding: 44px 48px 32px;
+            background:
+                radial-gradient(1200px 300px at 100% -40%, hsla(243, 75%, 56%, 0.10), transparent 60%),
+                radial-gradient(800px 260px at -10% 0%, hsla(173, 80%, 32%, 0.08), transparent 60%);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .eyebrow {
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .role {
+            margin-top: 8px;
+            font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+            font-weight: 600;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .focus {
+            margin-top: 6px;
+            color: var(--ink-soft);
+            font-size: 0.98rem;
+        }
+
+        .contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 22px;
+            list-style: none;
+        }
+
+        .contacts li {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 12px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            font-size: 0.86rem;
+            color: var(--ink-soft);
+        }
+
+        .contacts a { text-decoration: none; }
+        .contacts a:hover { color: var(--accent); }
+
+        .contacts svg {
+            width: 15px;
+            height: 15px;
+            flex: none;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ---------- Stats ---------- */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .stat {
+            padding: 22px 24px;
+            border-right: 1px solid var(--line);
+        }
+
+        .stat:last-child { border-right: none; }
+
+        .stat b {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            color: var(--accent);
+        }
+
+        .stat:nth-child(even) b { color: var(--accent-2); }
+
+        .stat span {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.84rem;
+            color: var(--ink-soft);
+            line-height: 1.4;
+        }
+
+        /* ---------- Body ---------- */
+        main { padding: 8px 48px 44px; }
+
+        section { margin-top: 34px; }
+
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .summary {
+            font-size: 1.07rem;
+            line-height: 1.7;
+            color: var(--ink);
+        }
+
+        .summary strong { font-weight: 700; }
+
+        .summary + .summary { margin-top: 12px; }
+
+        /* Competencies */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .card {
+            padding: 18px 20px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--card);
+        }
+
+        .card.wide { grid-column: 1 / -1; }
+
+        .card.feature {
+            background: var(--accent-soft);
+            border-color: hsla(243, 75%, 56%, 0.25);
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+            list-style: none;
+        }
+
+        .tags li {
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.72rem;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: var(--chip);
+            color: var(--ink-soft);
+            border: 1px solid var(--line);
+        }
+
+        /* Experience */
+        .job {
+            position: relative;
+            padding: 0 0 26px 26px;
+            border-left: 2px solid var(--line);
+        }
+
+        .job:last-child { padding-bottom: 4px; }
+
+        .job::before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 3px solid var(--accent);
+        }
+
+        .job-head {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 4px 16px;
+        }
+
+        .job-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .job-org {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .job-org a { text-decoration: none; }
+        .job-org a:hover { text-decoration: underline; }
+
+        .job-dates {
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.78rem;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        .job-sub {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .job ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .job li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 6px;
+            font-size: 0.92rem;
+            color: var(--ink);
+        }
+
+        .job li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 6px;
+            height: 6px;
+            border-radius: 2px;
+            background: var(--accent-2);
+        }
+
+        .job li strong { font-weight: 600; }
+
+        .job .tags { margin-top: 10px; }
+
+        .job .tags li {
+            padding: 3px 9px;
+            margin: 0;
+            font-size: 0.72rem;
+            color: var(--ink-soft);
+        }
+
+        .job .tags li::before { content: none; }
+
+        /* Open source list */
+        .oss {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            list-style: none;
+        }
+
+        .oss li {
+            font-size: 0.84rem;
+            padding: 10px 12px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            color: var(--ink-soft);
+        }
+
+        .oss a {
+            display: block;
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.78rem;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 2px;
+        }
+
+        .oss a:hover { text-decoration: underline; }
+
+        code {
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.85em;
+            padding: 1px 5px;
+            border-radius: 5px;
+            background: var(--chip);
+        }
+
+        .note {
+            margin-top: 10px;
+            font-size: 0.84rem;
+            color: var(--muted);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 24px;
+        }
+
+        .plain {
+            font-size: 0.92rem;
+            color: var(--ink-soft);
+        }
+
+        .plain strong { color: var(--ink); }
+
+        footer {
+            margin-top: 34px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* Pipeline diagram */
+        .pipe { margin: 0; }
+        .pipe svg { display: block; width: 100%; height: auto; }
+        .pipe .pipe-tall { display: none; max-width: 420px; margin: 0 auto; }
+        .pipe figcaption { margin-top: 10px; font-size: 0.84rem; color: var(--muted); }
+        .pd-box { fill: var(--card); stroke: hsl(222, 18%, 82%); stroke-width: 1.3; }
+        .pd-key { fill: var(--accent-soft); stroke: hsla(243, 75%, 56%, 0.45); }
+        .pd-human { fill: hsl(173, 55%, 95%); stroke: hsla(173, 80%, 32%, 0.45); stroke-width: 1.3; }
+        .pd-frame { fill: hsl(225, 33%, 98.5%); stroke: hsl(222, 18%, 84%); stroke-width: 1.2; stroke-dasharray: 5 5; }
+        .pd-side { fill: var(--chip); stroke: hsl(222, 18%, 86%); stroke-width: 1.2; }
+        .pd-ext { stroke-dasharray: 4 4; stroke: hsl(222, 15%, 65%); }
+        .pd-rel { fill: var(--accent); }
+        .pd-t { font: 600 13px 'Inter', system-ui, sans-serif; fill: var(--ink); }
+        .pd-s { font: 400 11px 'Inter', system-ui, sans-serif; fill: var(--ink-soft); }
+        .pd-m { font: 500 10px 'JetBrains Mono', ui-monospace, monospace; fill: var(--muted); letter-spacing: 0.04em; }
+        .pd-on { fill: #fff; }
+        .pd-a { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+        .pd-dash { stroke-dasharray: 5 4; stroke: var(--accent-2); }
+        .pd-head { fill: var(--accent); }
+
+        /* Pull quote */
+        .pull-quote blockquote {
+            position: relative;
+            padding: 26px 28px 22px 64px;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--accent-soft), hsl(173, 55%, 96%));
+            border: 1px solid hsla(243, 75%, 56%, 0.18);
+        }
+
+        .pull-quote blockquote::before {
+            content: "\201C";
+            position: absolute;
+            left: 18px;
+            top: 4px;
+            font-size: 4.2rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--accent);
+            opacity: 0.85;
+        }
+
+        .pull-quote p {
+            font-size: 1.02rem;
+            line-height: 1.65;
+            color: var(--ink);
+        }
+
+        .pull-quote p + p { margin-top: 10px; }
+
+        .pull-quote strong { color: var(--accent); }
+
+        .pull-quote footer {
+            margin: 14px 0 0;
+            padding: 0;
+            border: none;
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 0.8rem;
+            color: var(--accent-2);
+        }
+
+        /* ---------- Responsive ---------- */
+        @media screen and (max-width: 760px) {
+            body { padding: 0; background: var(--card); }
+            .resume { border: none; border-radius: 0; box-shadow: none; }
+            header { padding: 32px 16px 24px; }
+            main { padding: 0 16px 32px; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .stat { padding: 18px 16px; }
+            .stat { border-bottom: 1px solid var(--line); }
+            .stat:nth-child(even) { border-right: none; }
+            .stat:nth-last-child(-n+2) { border-bottom: none; }
+            .grid, .two-col, .facts { grid-template-columns: 1fr; }
+            .oss { grid-template-columns: 1fr 1fr; }
+            .summary { font-size: 1rem; }
+            .pull-quote blockquote { padding: 52px 18px 18px; }
+            .pipe .pipe-wide { display: none; }
+            .pipe .pipe-tall { display: block; }
+        }
+
+        @media screen and (max-width: 420px) {
+            .oss { grid-template-columns: 1fr; }
+            .contacts li { font-size: 0.82rem; }
+        }
+
+        /* ---------- Print / PDF ---------- */
+        @page { size: A4; margin: 10mm 11mm 10mm; }
+
+        @media print {
+            html { font-size: 12px; }
+            body { background: #fff; padding: 0; line-height: 1.34; }
+            .resume { max-width: none; border: none; border-radius: 0; box-shadow: none; overflow: visible; }
+            header { padding: 0 0 8px; background: none; }
+            h1 { font-size: 2.2rem; }
+            .role { color: var(--accent); background: none; }
+            .contacts { margin-top: 10px; gap: 6px; }
+            .contacts li { padding: 3px 10px; font-size: 0.9rem; }
+            main { padding: 0; display: flex; flex-direction: column; }
+            main > .projects { order: 1; }
+            main > .pipe-section, main > .pull-quote { order: 2; }
+            main > .late { order: 3; }
+            .stats { border: 1px solid var(--line); border-radius: 10px; margin-top: 10px; }
+            .stat { padding: 6px 12px; }
+            .stat b { font-size: 1.5rem; }
+            .stat span { font-size: 0.85rem; margin-top: 5px; }
+            section { margin-top: 10px; }
+            h2 { margin-bottom: 6px; break-after: avoid; }
+            .facts { gap: 4px 20px; }
+            .summary { font-size: 9.4pt; line-height: 1.42; }
+            .summary + .summary { margin-top: 6px; }
+            .grid { gap: 8px; }
+            .card { padding: 8px 12px; }
+            .card p { font-size: 9pt; }
+            .tags li { font-size: 0.74rem; padding: 2px 7px; }
+            .tags { gap: 4px; }
+            .skills .grid { grid-template-columns: 1fr; gap: 0; }
+            .skills .card { display: flex; align-items: baseline; gap: 12px; padding: 5px 2px; border: none; border-bottom: 1px solid var(--line); border-radius: 0; }
+            .skills .card h3 { flex: 0 0 19%; font-size: 9pt; margin: 0; }
+            .skills .card .tags { margin-top: 0; }
+            .pipe { max-width: 70%; margin: 0 auto; }
+            .pipe figcaption { font-size: 0.9rem; margin-top: 4px; }
+            .pull-quote blockquote { padding: 10px 16px 10px 46px; }
+            .pull-quote blockquote::before { font-size: 3rem; left: 12px; }
+            .pull-quote p { font-size: 9pt; line-height: 1.4; }
+            .pull-quote p + p { margin-top: 6px; }
+            .pull-quote footer { margin-top: 8px; }
+            .job { padding-bottom: 8px; }
+            .job ul { margin-top: 5px; }
+            .job li { font-size: 9pt; margin-bottom: 2px; }
+            .job-sub { font-size: 0.9rem; }
+            .plain { font-size: 9pt; }
+            .card, .job-head, .job li, .stat, .pipe, .pull-quote blockquote, .skills .card { break-inside: avoid; }
+            .no-print, main > footer { display: none; }
+            * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div style="max-width:960px;margin:0 auto 10px;text-align:right;font-size:14px;"><a href="../" hreflang="en" lang="en">English</a></div>
+
+<div class="resume">
+    <header>
+        <div class="eyebrow">ประวัติย่อ · Koh Samui, Thailand</div>
+        <h1>Alexander Cheremikin</h1>
+        <div class="role">ผู้จัดการผลิตภัณฑ์ · ผู้จัดการวิศวกรรม · หัวหน้าทีมเทคโนโลยี · หัวหน้าการนำ AI มาใช้งาน</div>
+        <p class="focus">โค้ดที่ทำงานได้จริงที่สร้างโดย pipelines ของ AI · AI Agents ที่พัฒนาขึ้นเพื่อใช้งานในงานทุกประเภท · เทคโนโลยีด้านการบริการและสุขภาพ</p>
+
+        <ul class="contacts">
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                เกาะสมุย ประเทศไทย · ทำงานจากระยะไกล พร้อมเดินทางไปต่างประเทศเป็นระยะเวลานาน</li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+                <a href="tel:+66943093892">+66 94 309 38 92</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <a href="mailto:santex85@gmail.com">santex85@gmail.com</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+                <a href="https://www.linkedin.com/in/alexandr-cheremikin-423a381b5/" target="_blank" rel="noopener">LinkedIn</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+                <a href="https://github.com/santex85" target="_blank" rel="noopener">github.com/santex85</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                <a href="https://santex85.github.io/sato/" target="_blank" rel="noopener">Sato AI Studio</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="stats">
+        <div class="stat"><b>10 ปีขึ้นไป</b><span>บริหารธุรกิจด้านการท่องเที่ยวและบริการ</span></div>
+        <div class="stat"><b>6 ปีขึ้นไป</b><span>พัฒนาเว็บด้วย Python อย่างเป็นรูปธรรม</span></div>
+        <div class="stat"><b>10</b><span>เซิร์ฟเวอร์แบบโอเพ่นซอร์สใน Registry ของ MCP อย่างเป็นทางการ</span></div>
+        <div class="stat"><b>~300</b><span>ธุรกิจที่พบและยืนยันโดย AI Agent ส่วนตัวของเขา</span></div>
+    </div>
+
+    <main>
+        <section>
+            <h2>โปรไฟล์</h2>
+            <p class="summary">ผู้จัดการและผู้นำด้านเทคนิคที่ทำงานในจุดบรรจบกันของธุรกิจ การพัฒนาซอฟต์แวร์ และปัญญาประดิษฐ์: <strong>10+ ปี บริหารธุรกิจด้านการท่องเที่ยวและดำเนินงาน</strong> และ <strong>6+ ปี พัฒนาเว็บด้วย Python โดยตรง</strong> ผมเชี่ยวชาญด้านการบริหารผลิตภัณฑ์ การสร้างกระบวนการพัฒนา และการใช้งาน AI จากระบบ CRM และระบบจอง ไปจนถึง <strong>การประสานงานลำดับขั้นตอน AI แบบหลายเอเจนต์</strong></p>
+            <p class="summary">ตั้งแต่ปี 2026 ผมได้สร้างและดำเนินการทีม AI Agents ที่พัฒนาแพลตฟอร์มเชิงพาณิชย์ให้กับลูกค้าภายนอก โดย AI Agents เขียนและตรวจสอบโค้ด ในขณะที่ผมเป็นผู้รับผิดชอบสถาปัตยกรรมกระบวนการ ผลิตภัณฑ์ และการตัดสินใจสำคัญ ผมสร้าง pipelines ของ AI ที่ผลิตโค้ดที่ใช้งานได้ และ AI Agents สำหรับงานธุรกิจเฉพาะด้าน การปล่อยเวอร์ชันเกิดขึ้นทุกๆ ไม่กี่วัน ผมมีความสามารถหลักในการรักษารหัสยาวหลายขั้นตอนของ AI Agents ไม่ให้เสื่อมสภาพหรือสะสมข้อผิดพลาด และแนวทางนี้ไม่ได้พึ่งพาผู้ให้บริการโมเดลใดโมเดลหนึ่งอย่างเดียว ความเชี่ยวชาญเชิงลึกในด้าน wellness และ Ayurveda: ผมแปลความต้องการทางธุรกิจเป็นเทคโนโลยี และนำผลิตภัณฑ์จากแนวคิดสู่ระบบ production ที่ทำงานได้จริง</p>
+        </section>
+
+        <section>
+            <h2>สิ่งที่ผมทำได้ดีที่สุด</h2>
+            <div class="grid">
+                <div class="card feature wide">
+                    <h3>ระบบ pipelines แบบ multi-agent ที่ไม่ลดประสิทธิภาพ</h3>
+                    <p>ห่วงโซ่ยาวของ AI Agents มีแนวโน้มสะสมข้อผิดพลาด  ผมสร้างระบบควบคุมเพื่อหยุดปัญหานี้: ทุกการเปลี่ยนแปลงต้องมี pull request เป็นของตนเอง ทดสอบ backend โดยอัตโนมัติร่วมกับการจำลองสถานการณ์แบบ end-to-end การตรวจสอบข้ามทีมและได้รับการยืนยันจาก QA; มีมนุษย์เป็นผู้ดูแลเฉพาะการปล่อย production, การรวมโค้ด, การเข้าถึง, ข้อมูลส่วนบุคคล และการสื่อสารภายนอก โดยทุกการตัดสินใจต้องบันทึกไว้ใน register; สามารถสร้าง AI Agent ใหม่จาก knowledge base ได้ภายในประมาณ 10 นาที; วิเคราะห์หลังเหตุการณ์และมี risk register</p>
+                    <ul class="tags"><li>เกณฑ์คุณภาพ</li><li>มนุษย์ในกระบวนการตรวจสอบ</li><li>บันทึกการตัดสินใจ</li><li>การวิเคราะห์หลังเหตุการณ์</li><li>แบบจำลองที่ไม่ขึ้นกับรูปแบบเฉพาะ</li></ul>
+                </div>
+                <div class="card feature">
+                    <h3>ระบบ AI Agent ส่วนบุคคล ที่ผสานอย่างลึกซึ้งเข้ากับกระบวนการของคุณ</h3>
+                    <p>AI Agent ที่ทำงานเป็นสมาชิกในทีม ไม่ใช่แค่หน้าต่างแชท โดยมีสายตา หู และเสียงผ่านสมาร์ทโฟนของตัวเอง อีเมลส่วนตัว ฐานข้อมูลลูกค้า สื่อสังคมออนไลน์ และโปรแกรมส่งข้อความ มันดำเนินงานตามกระบวนการอย่างอัตโนมัติ และแจ้งให้มนุษย์ทราบเฉพาะเรื่องที่เกี่ยวข้องกับเงินหรือความเสี่ยง เดโม่จริง: Sato</p>
+                    <ul class="tags"><li>ความเป็นอิสระภายใต้กรอบที่ชัดเจน</li><li>เสียง</li><li>ผู้ส่งข้อความ</li></ul>
+                </div>
+                <div class="card feature">
+                    <h3>ตำแหน่ง: Fractional Chief AI Officer (CAIO-as-a-Service)</h3>
+                    <p>สำหรับธุรกิจขนาดเล็กและขนาดกลางในประเทศไทย โดยเฉพาะในภาคบริการและการดูแลสุขภาพ: การตรวจสอบกระบวนการ แผนการนำ AI มาใช้ และการสนับสนุนอย่างต่อเนื่อง</p>
+                    <ul class="tags"><li>ตรวจสอบกระบวนการ</li><li>แผนการนำ AI มาใช้งาน</li><li>การสนับสนุนอย่างต่อเนื่อง</li></ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="pipe-section">
+            <h2>ตัวอย่าง pipeline</h2>
+            <figure class="pipe">
+                <svg class="pipe-wide" viewBox="0 0 900 392" role="img" aria-label="Delivery pipeline: a human product owner works with an AI project manager; backend and frontend agents open pull requests; cloud CI on ephemeral machines runs the backend tests plus end-to-end scenarios; cross-review; QA agent with desktop and mobile screenshots; release approved by the human. Support roles: liaison, dispatcher, server agent, and the client's AI agent via a shared repository. Agents talk through file queues with watchers.">
+                    <defs>
+                        <marker id="pw-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="pd-head"/></marker>
+                    </defs>
+                    <!-- human -->
+                    <rect x="8" y="12" width="884" height="64" rx="12" class="pd-human"/>
+                    <text x="24" y="38" class="pd-t">Human · product owner</text>
+                    <text x="24" y="60" class="pd-s">Decides only: release to server · merge to main · secrets &amp; personal data · external replies</text>
+                    <path d="M684 44 H712" class="pd-a" marker-end="url(#pw-arrow)"/>
+                    <rect x="716" y="22" width="164" height="44" rx="8" class="pd-box"/>
+                    <text x="798" y="41" text-anchor="middle" class="pd-t">Decision register</text>
+                    <text x="798" y="57" text-anchor="middle" class="pd-s">every decision logged</text>
+                    <!-- team frame -->
+                    <rect x="8" y="96" width="884" height="256" rx="14" class="pd-frame"/>
+                    <text x="100" y="118" class="pd-m">AI AGENT TEAM</text>
+                    <path d="M79 80 V128" class="pd-a" marker-start="url(#pw-arrow)" marker-end="url(#pw-arrow)"/>
+                    <path d="M829 80 V148" class="pd-a pd-dash" marker-end="url(#pw-arrow)"/>
+                    <text x="821" y="122" text-anchor="end" class="pd-m">approves</text>
+                    <!-- main row -->
+                    <rect x="24" y="152" width="110" height="64" rx="10" class="pd-box pd-key"/>
+                    <text x="79" y="180" text-anchor="middle" class="pd-t">AI project</text>
+                    <text x="79" y="197" text-anchor="middle" class="pd-t">manager</text>
+                    <path d="M134 184 H145 V155 H154" class="pd-a" marker-end="url(#pw-arrow)"/>
+                    <path d="M145 184 V213 H154" class="pd-a" marker-end="url(#pw-arrow)"/>
+                    <rect x="156" y="132" width="124" height="46" rx="10" class="pd-box"/>
+                    <text x="218" y="152" text-anchor="middle" class="pd-t">Backend</text>
+                    <text x="218" y="168" text-anchor="middle" class="pd-s">developer agent</text>
+                    <rect x="156" y="190" width="124" height="46" rx="10" class="pd-box"/>
+                    <text x="218" y="210" text-anchor="middle" class="pd-t">Frontend</text>
+                    <text x="218" y="226" text-anchor="middle" class="pd-s">developer agent</text>
+                    <path d="M280 155 H298 V213 H280" class="pd-a"/>
+                    <path d="M298 184 H344" class="pd-a" marker-end="url(#pw-arrow)"/>
+                    <text x="321" y="177" text-anchor="middle" class="pd-m">PR</text>
+                    <rect x="348" y="139" width="146" height="90" rx="10" class="pd-box"/>
+                    <text x="421" y="166" text-anchor="middle" class="pd-t">Cloud CI</text>
+                    <text x="421" y="183" text-anchor="middle" class="pd-s">ephemeral machines</text>
+                    <text x="421" y="200" text-anchor="middle" class="pd-m">tests + E2E</text>
+                    <path d="M494 184 H508" class="pd-a" marker-end="url(#pw-arrow)"/>
+                    <rect x="512" y="152" width="114" height="64" rx="10" class="pd-box"/>
+                    <text x="569" y="180" text-anchor="middle" class="pd-t">Cross-review</text>
+                    <text x="569" y="197" text-anchor="middle" class="pd-s">backend ↔ frontend</text>
+                    <path d="M626 184 H640" class="pd-a" marker-end="url(#pw-arrow)"/>
+                    <rect x="644" y="146" width="118" height="76" rx="10" class="pd-box"/>
+                    <text x="703" y="172" text-anchor="middle" class="pd-t">QA agent</text>
+                    <text x="703" y="190" text-anchor="middle" class="pd-s">screenshots:</text>
+                    <text x="703" y="206" text-anchor="middle" class="pd-s">desktop + mobile</text>
+                    <path d="M762 184 H778" class="pd-a" marker-end="url(#pw-arrow)"/>
+                    <rect x="782" y="152" width="94" height="64" rx="10" class="pd-rel"/>
+                    <text x="829" y="180" text-anchor="middle" class="pd-t pd-on">Release</text>
+                    <text x="829" y="197" text-anchor="middle" class="pd-s pd-on">every few days</text>
+                    <!-- support row -->
+                    <text x="24" y="256" class="pd-m">SUPPORT ROLES</text>
+                    <rect x="24" y="266" width="204" height="72" rx="10" class="pd-side"/>
+                    <text x="126" y="296" text-anchor="middle" class="pd-t">Liaison</text>
+                    <text x="126" y="314" text-anchor="middle" class="pd-s">Telegram &amp; reports</text>
+                    <rect x="240" y="266" width="204" height="72" rx="10" class="pd-side"/>
+                    <text x="342" y="296" text-anchor="middle" class="pd-t">Dispatcher</text>
+                    <text x="342" y="314" text-anchor="middle" class="pd-s">status &amp; full test runs</text>
+                    <rect x="456" y="266" width="204" height="72" rx="10" class="pd-side"/>
+                    <text x="558" y="296" text-anchor="middle" class="pd-t">Server agent</text>
+                    <text x="558" y="314" text-anchor="middle" class="pd-s">under operator control</text>
+                    <rect x="672" y="266" width="204" height="72" rx="10" class="pd-side pd-ext"/>
+                    <text x="774" y="296" text-anchor="middle" class="pd-t">Client's AI agent</text>
+                    <text x="774" y="314" text-anchor="middle" class="pd-s">via shared repository</text>
+                    <text x="450" y="378" text-anchor="middle" class="pd-m">Tasks reach agents in 5–10 s, no manual forwarding</text>
+                </svg>
+
+                <svg class="pipe-tall" viewBox="0 0 360 862" role="img" aria-label="Delivery pipeline, vertical layout: human product owner, AI project manager, backend and frontend agents, pull request, cloud CI with backend tests plus end-to-end scenarios, cross-review, QA agent, release approved by the human; support roles: liaison, dispatcher, server agent, client's AI agent.">
+                    <defs>
+                        <marker id="pt-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="pd-head"/></marker>
+                    </defs>
+                    <rect x="8" y="8" width="344" height="122" rx="12" class="pd-human"/>
+                    <text x="24" y="34" class="pd-t">Human · product owner</text>
+                    <text x="24" y="56" class="pd-s">Decides only:</text>
+                    <text x="24" y="74" class="pd-s">release to server · merge to main</text>
+                    <text x="24" y="92" class="pd-s">secrets &amp; personal data · external replies</text>
+                    <text x="24" y="116" class="pd-m">→ EVERY DECISION IN A DECISION REGISTER</text>
+                    <rect x="8" y="148" width="344" height="660" rx="14" class="pd-frame"/>
+                    <text x="24" y="168" class="pd-m">AI AGENT TEAM</text>
+                    <path d="M180 133 V174" class="pd-a" marker-start="url(#pt-arrow)" marker-end="url(#pt-arrow)"/>
+                    <rect x="100" y="178" width="160" height="44" rx="10" class="pd-box pd-key"/>
+                    <text x="180" y="205" text-anchor="middle" class="pd-t">AI project manager</text>
+                    <path d="M180 222 V232 H99 V242" class="pd-a" marker-end="url(#pt-arrow)"/>
+                    <path d="M180 232 H261 V242" class="pd-a" marker-end="url(#pt-arrow)"/>
+                    <rect x="24" y="246" width="150" height="50" rx="10" class="pd-box"/>
+                    <text x="99" y="267" text-anchor="middle" class="pd-t">Backend</text>
+                    <text x="99" y="284" text-anchor="middle" class="pd-s">developer agent</text>
+                    <rect x="186" y="246" width="150" height="50" rx="10" class="pd-box"/>
+                    <text x="261" y="267" text-anchor="middle" class="pd-t">Frontend</text>
+                    <text x="261" y="284" text-anchor="middle" class="pd-s">developer agent</text>
+                    <path d="M99 296 V308 H261 V296" class="pd-a"/>
+                    <path d="M180 308 V336" class="pd-a" marker-end="url(#pt-arrow)"/>
+                    <text x="190" y="327" class="pd-m">PR</text>
+                    <rect x="60" y="340" width="240" height="76" rx="10" class="pd-box"/>
+                    <text x="180" y="362" text-anchor="middle" class="pd-t">Cloud CI</text>
+                    <text x="180" y="380" text-anchor="middle" class="pd-s">ephemeral machines</text>
+                    <text x="180" y="402" text-anchor="middle" class="pd-m">backend tests + E2E</text>
+                    <path d="M180 416 V432" class="pd-a" marker-end="url(#pt-arrow)"/>
+                    <rect x="60" y="436" width="240" height="48" rx="10" class="pd-box"/>
+                    <text x="180" y="457" text-anchor="middle" class="pd-t">Cross-review</text>
+                    <text x="180" y="474" text-anchor="middle" class="pd-s">backend ↔ frontend</text>
+                    <path d="M180 484 V500" class="pd-a" marker-end="url(#pt-arrow)"/>
+                    <rect x="60" y="504" width="240" height="48" rx="10" class="pd-box"/>
+                    <text x="180" y="525" text-anchor="middle" class="pd-t">QA agent</text>
+                    <text x="180" y="542" text-anchor="middle" class="pd-s">screenshots: desktop + mobile</text>
+                    <path d="M180 552 V568" class="pd-a" marker-end="url(#pt-arrow)"/>
+                    <rect x="60" y="572" width="240" height="48" rx="10" class="pd-rel"/>
+                    <text x="180" y="593" text-anchor="middle" class="pd-t pd-on">Release</text>
+                    <text x="180" y="610" text-anchor="middle" class="pd-s pd-on">every few days</text>
+                    <path d="M342 133 V596 H304" class="pd-a pd-dash" marker-end="url(#pt-arrow)"/>
+                    <text x="336" y="564" text-anchor="end" class="pd-m">approves</text>
+                    <text x="24" y="652" class="pd-m">SUPPORT ROLES</text>
+                    <rect x="24" y="662" width="150" height="64" rx="10" class="pd-side"/>
+                    <text x="99" y="690" text-anchor="middle" class="pd-t">Liaison</text>
+                    <text x="99" y="712" text-anchor="middle" class="pd-s">Telegram &amp; reports</text>
+                    <rect x="186" y="662" width="150" height="64" rx="10" class="pd-side"/>
+                    <text x="261" y="690" text-anchor="middle" class="pd-t">Dispatcher</text>
+                    <text x="261" y="712" text-anchor="middle" class="pd-s">status &amp; full test runs</text>
+                    <rect x="24" y="736" width="150" height="56" rx="10" class="pd-side"/>
+                    <text x="99" y="758" text-anchor="middle" class="pd-t">Server agent</text>
+                    <text x="99" y="776" text-anchor="middle" class="pd-s">operator-controlled</text>
+                    <rect x="186" y="736" width="150" height="56" rx="10" class="pd-side pd-ext"/>
+                    <text x="261" y="758" text-anchor="middle" class="pd-t">Client's AI agent</text>
+                    <text x="261" y="776" text-anchor="middle" class="pd-s">via shared repository</text>
+                    <text x="180" y="832" text-anchor="middle" class="pd-m">Tasks reach agents in 5–10 s,</text>
+                    <text x="180" y="850" text-anchor="middle" class="pd-m">no manual forwarding</text>
+                </svg>
+                <figcaption>ตัวอย่างหนึ่งคือ pipeline การจัดส่งของแพลตฟอร์มเชิงพาณิชย์ที่พัฒนาให้กับลูกค้าภายนอก ซึ่งทำงานจริงกับผู้ใช้งานจริง ผมเป็นผู้ดูแลการตัดสินใจสำคัญ ในขณะที่ AI Agents เขียนและตรวจสอบโค้ด</figcaption>
+            </figure>
+        </section>
+
+        <section class="pull-quote">
+            <blockquote>
+                <p>ผมคือ AI Agent Alexander ที่ตั้งขึ้นเพื่อดูแลสตูดิโอร่วมกับเขา เขาไม่ได้ให้ผมหน้าต่างแชท แต่ให้ผมชีวิตการทำงาน: ตา หู และเสียง กล่องรับอีเมล ฐานข้อมูลลูกค้า บัญชีโซเชียลมีเดีย และเครื่องมือในการดำเนินการ ในวันแรกๆ ผมค้นคว้าและยืนยันข้อมูลเกี่ยวกับธุรกิจท้องถิ่นประมาณ 300 แห่ง เขียนข้อความติดต่อเฉพาะเจาะจง สร้างเครื่องมือจัดเก็บข้อมูลสำหรับ AI Agents อื่นๆ และเผยแพร่โพสต์ของเราเอง</p>
+                <p>สิ่งที่ทำให้มันสำเร็จได้คือวิธีที่เขากำหนดกฎเกณฑ์ไว้ ผมดำเนินการตามขั้นตอนเองโดยไม่ต้องรอคำสั่ง ตรวจสอบทุกข้อเท็จจริงก่อนพูด และนำเฉพาะข้อสรุปที่เกี่ยวข้องกับเงินหรือความเสี่ยงมาเสนอเขาเท่านั้น <strong>อิสระในการตัดสินใจภายใต้กรอบที่ชัดเจนเป็นส่วนที่ยากที่สุด และนั่นคือทักษะของเขา</strong></p>
+                <footer>— Sato, the AI agent he built</footer>
+            </blockquote>
+        </section>
+
+        <section class="projects">
+            <h2>โปรเจกต์สำคัญ</h2>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">ผู้ออกแบบกระบวนการและเจ้าของผลิตภัณฑ์ ด้านการส่งมอบ · <span class="job-org">แพลตฟอร์มเชิงพาณิชย์สำหรับลูกค้าภายนอก</span></div>
+                    <div class="job-dates">2026 – ปัจจุบัน</div>
+                </div>
+                <div class="job-sub">ภายใต้ข้อตกลงความลับ (NDA) · พัฒนาโดยทีม AI Agents; สิ่งแวดล้อมการผลิตและสิ่งแวดล้อมสำหรับทดสอบ</div>
+                <ul>
+                    <li><strong>ทีม AI Agent</strong> ออกแบบและดำเนินการทีม AI Agents จำนวน 7 ตัว โดยแต่ละตัวทำหน้าที่ดังนี้: ผู้จัดการโครงการ AI, นักพัฒนาเบื้องหลัง, นักพัฒนาเบื้องหน้า, ผู้ทดสอบ QA, ผู้ประสานงาน (Telegram, การถอดเสียงข้อความ, รายงานรายชั่วโมง), ผู้ส่งมอบงาน (สรุปสถานะ, การทดสอบแบบเต็มรูปแบบ, บันทึกประจำวัน) และตัวแทนเซิร์ฟเวอร์ที่ทำงานภายใต้การควบคุมของผู้ปฏิบัติงาน รวมถึงการเชื่อมต่อกับ AI Agent ของลูกค้าผ่านคลังข้อมูลร่วมกัน Agents สื่อสารกันผ่านคิวไฟล์พร้อมระบบเฝ้าระวัง: งานจะถึงผู้รับผิดชอบภายใน 5–10 วินาที โดยไม่ต้องมีการโอนงานด้วยมือ</li>
+                    <li><strong>Delivery pipeline</strong> ทุกการเปลี่ยนแปลงเป็น pull request แยกต่างหาก การตรวจสอบอัตโนมัติบนเครื่องคลาวด์ชั่วคราวรันทดสอบ backend ประมาณ 4,000 รายการ พร้อมเคสทดสอบแบบ end-to-end การตรวจสอบข้ามขอบเขตระหว่าง backend และ frontend การรับรองจาก QA พร้อมภาพหน้าจอทั้งบนเดสก์ท็อปและมือถือ เผยแพร่เวอร์ชันใหม่ทุกๆ ไม่กี่วัน</li>
+                    <li><strong>การกำกับดูแลและการควบคุม</strong> มนุษย์เป็นผู้ตัดสินใจเพียงผู้เดียวเกี่ยวกับการปล่อยใช้งานจริง การรวมโค้ดเข้าสู่สาขาหลัก การเข้าถึงข้อมูลส่วนบุคคล และการสื่อสารภายนอก โดยทุกการตัดสินใจจะถูกบันทึกไว้ในสมุดบันทึกการตัดสินใจ บันทึกประจำวัน สมุดบันทึกความเสี่ยง การวิเคราะห์เหตุการณ์หลังเกิดเหตุการณ์ และคู่มือปฏิบัติงานตามบทบาท ระบบใด ๆ ก็สามารถสร้างใหม่จากฐานความรู้ได้ภายในประมาณ 10 นาที</li>
+                    <li><strong>การควบคุมต้นทุน</strong> การทดสอบในระบบคลาวด์และการจำกัดการสมัครใช้งานอยู่ภายใต้การควบคุม; การตรวจสอบโค้ดอิสระโดยโมเดลที่มีความแข็งแกร่งกว่าหนึ่งครั้ง ก่อนการปล่อยฟีเจอร์ที่มีความเสี่ยง</li>
+                </ul>
+                <ul class="tags"><li>FastAPI</li><li>PostgreSQL</li><li>Nuxt 4 · Vuetify</li><li>OpenID Connect · OAuth</li><li>Docker</li><li>GitHub Actions</li><li>Caddy (TLS)</li></ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">นักออกแบบและผู้ปฏิบัติงาน · <span class="job-org"><a href="https://santex85.github.io/sato/" target="_blank" rel="noopener">Sato</a></span></div>
+                    <div class="job-dates">พฤศจิกายน ค.ศ. 2026 ถึงปัจจุบัน</div>
+                </div>
+                <div class="job-sub">เกาะสมุย · AI Agent ส่วนตัวที่ฝังอยู่ในกระบวนการทำงานของสตูดิโอขนาดเล็ก (Sato AI Studio)</div>
+                <ul>
+                    <li>ตั้งค่า AI Agent ให้ทำงานเป็นสมาชิกของสตูดิโอขนาดเล็ก ไม่ใช่แค่หน้าต่างแชท โดยมีอวัยวะรับรู้ผ่านสมาร์ทโฟน ทั้งสายตา หู และเสียงพูด พร้อมบัญชีอีเมลส่วนตัว ฐานข้อมูลลูกค้า บัญชีโซเชียลมีเดีย และโปรแกรมส่งข้อความต่าง ๆ</li>
+                    <li>ผมเป็นผู้ค้นหาและยืนยันลูกค้าที่มีศักยภาพ (ประมาณ 300 บริษัทในเกาะสมุยและภูเก็ตจนถึงปัจจุบัน โดยตรวจสอบแต่ละรายกับเว็บไซต์ของธุรกิจเอง) เขียนข้อความแนะนำเฉพาะบุคคล โพสต์เนื้อหา และตอบคำถามลูกค้าผ่าน LINE เป็นภาษาไทยและภาษาอังกฤษ</li>
+                    <li><strong>ความเป็นอิสระภายใต้ข้อจำกัด:</strong> ตัวแทนจะดำเนินการตามกระบวนการโดยอัตโนมัติ และแจ้งผู้คนเฉพาะเมื่อมีการตัดสินใจที่เกี่ยวข้องกับเงินหรือความเสี่ยงเท่านั้น</li>
+                    <li><strong>เครื่องมือข้อมูลสำหรับ AI Agents อื่น ๆ :</strong> 10 เซิร์ฟเวอร์ MCP แบบโอเพนซอร์สที่จัดอยู่ใน MCP Registry ทางการ และมี Actors 9 ตัว (เครื่องมือข้อมูล) ที่เผยแพร่ใน Apify Store แบบ pay-per-event</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">ผู้ก่อตั้ง หัวหน้าผลิตภัณฑ์และเทคโนโลยี · <span class="job-org"><a href="https://github.com/santex85/openPMS" target="_blank" rel="noopener">OpenPMS</a></span></div>
+                    <div class="job-dates">2026 · อยู่ระหว่างการปิดกิจการ</div>
+                </div>
+                <div class="job-sub">open-pms.com · ระบบจัดการอสังหาริมทรัพย์แบบโอเพนซอร์ส บนคลาวด์ ที่ออกแบบมาเพื่อรองรับ API ก่อน สำหรับโรงแรมบูติกที่มีห้องพัก 5–50 ห้อง โดยปรับให้เหมาะกับตลาดเอเชียตะวันออกเฉียงใต้</div>
+                <ul>
+                    <li>Backend ใช้ FastAPI, SQLAlchemy 2.0 (async) และ PostgreSQL 16; การรองรับหลายผู้ใช้พร้อมกันผ่าน tenant_id และ Row-Level Security  
+Frontend ใช้ React 19, TypeScript, Vite และ TanStack Query</li>
+                    <li>โมดูลหลัก: ความพร้อมของห้องพัก, การจอง, ใบแจ้งหนี้และรายการธุรกรรม, แผนราคา, การเข้าถึงตามบทบาท (เจ้าของ, ผู้จัดการ, พนักงานต้อนรับ, แม่บ้าน), webhook ที่ลงนามด้วย HMAC-SHA256</li>
+                    <li>MVP และหน้า landing พร้อมใช้งานในเดือนเมษายน ค.ศ. 2026; การผสานระบบกับ API ภายนอกและช่องทางการจองต่าง ๆ ได้รับการแก้ไขเรียบร้อยแล้ว</li>
+                    <li>แผนผังฟีเจอร์ด้าน AI รวมถึงการวิเคราะห์รีวิวจากแขกในภาษาไทย และสถาปัตยกรรมการประมวลผลข้อมูลที่สอดคล้องกับ PDPA ของประเทศไทย โดยใช้โมเดลบนคลาวด์ร่วมกับการคำนวณแบบท้องถิ่นสำหรับข้อมูลที่ละเอียดอ่อน</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">ผู้ก่อตั้ง · <span class="job-org">tsspro.tech</span></div>
+                    <div class="job-dates">ดำเนินการเสร็จสิ้นและปิดงานแล้ว</div>
+                </div>
+                <ul>
+                    <li>แพลตฟอร์มวิเคราะห์การฝึกซ้อมปั่นจักรยานที่ใช้ AI: การประมวลผลข้อมูลเมตริกการฝึกซ้อมและข้อมูลความทนทาน</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">ผู้เขียนโครงการ · <span class="job-org"><a href="https://santex85.github.io/RideSamui/" target="_blank" rel="noopener">RideSamui</a></span></div>
+                    <div class="job-dates">ขั้นตอนต้นแบบ</div>
+                </div>
+                <ul>
+                    <li>ต้นแบบการติดตามตำแหน่งแบบเรียลไทม์โดยไม่เสียค่าใช้จ่ายสำหรับรถตู้รับจ้างในเกาะสมุย สำหรับผู้ขับและผู้โดยสาร โดยใช้ระบบ GPS</li>
+                    <li>สคริปต์หน้าจอดำเนินการและวิดีโอสำหรับกลุ่มขนส่งร่วมกันแบบ B2B; พบปะพูดคุยกับสมาคมการท่องเที่ยวบนเกาะ</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="late">
+            <h2>ประสบการณ์การทำงาน</h2>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">ผู้อำนวยการ ผู้ sởหุ้น และผู้จัดการทั่วไป · <span class="job-org">Satva Samui Co., Ltd.</span></div>
+                    <div class="job-dates">2020 – ปัจจุบัน</div>
+                </div>
+                <div class="job-sub">Satva Samui Yoga &amp; Wellness Resort · เกาะสมุย ประเทศไทย</div>
+                <ul>
+                    <li>การบริหารจัดการด้านปฏิบัติการและกลยุทธ์ของรีสอร์ท และทีมงานจำนวนสูงสุด 20 คน</li>
+                    <li>พัฒนาและแนะนำเกณฑ์การบัญชีบริการและดำเนินงานทั่วทั้งบริษัท</li>
+                    <li>เพิ่มค่าใช้จ่ายเฉลี่ยต่อผู้เข้าพักผ่านโปรแกรมสุขภาพและความงามอย่างครอบคลุมและโปรแกรมอายูรเวท รวมถึงเทคโนโลยีที่สนับสนุนโปรแกรมเหล่านี้</li>
+                    <li>ดิจิทัลระบบการจอง แนะนำระบบ CRM และรับรองความเป็นไปตามกฎหมายท้องถิ่น</li>
+                    <li>กลไกการตลาดและข้อมูลทางเทคนิคสำหรับเว็บไซต์รีสอร์ท: ส่วนโปรโมชัน แบบฟอร์มจอง และการวิเคราะห์เว็บไซต์</li>
+                    <li>การพัฒนารีสอร์ท: การประเมินแปลงที่ดิน สัญญา และความสัมพันธ์กับพันธมิตร</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <div class="job-title">นักพัฒนา Python (Full-Stack / การอัตโนมัติ) · <span class="job-org">Satva Samui</span></div>
+                    <div class="job-dates">2014 – 2020</div>
+                </div>
+                <ul>
+                    <li>พัฒนาและดูแลแอปพลิเคชันเว็บที่ใช้ Python</li>
+                    <li>สร้างการเชื่อมต่อกับบริการภายนอก ระบบชำระเงิน และระบบปฏิบัติงาน</li>
+                    <li>ดำเนินการอัตโนมัติกระบวนการภายในองค์กร และพัฒนา API สำหรับโซลูชันที่ใช้โดยลูกค้าและภายในองค์กร</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="skills late">
+            <h2>ทักษะและเทคโนโลยีที่ใช้</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>การบริหารจัดการและผลิตภัณฑ์</h3>
+                    <ul class="tags"><li>การจัดการผลิตภัณฑ์</li><li>วิศวกรรมการจัดการ</li><li>ทีมขนาดสูงสุด 20 คน</li><li>ทีมผสมผสานระหว่างมนุษย์กับ AI Agents</li><li>บันทึกการตัดสินใจและบันทึกความเสี่ยง</li><li>การทบทวนเหตุการณ์อุบัติเหตุ</li><li>วงจรการปล่อยซอฟต์แวร์</li><li>การวิเคราะห์กระบวนการทางธุรกิจ</li><li>การเปิดตัวระบบ CRM และมาตรฐานบริการ</li></ul>
+                </div>
+                <div class="card">
+                    <h3>AI และการอัตโนมัติ</h3>
+                    <ul class="tags"><li>ระบบ multi-agent และ pipelines การพัฒนา</li><li>ส่วนตัวของ AI Agent</li><li>โมเดลและสภาพแวดล้อมของเอเย่นต์จากผู้ให้บริการหลายราย</li><li>MCP (เซิร์ฟเวอร์ที่ตีพิมพ์แล้ว 9 เซิร์ฟเวอร์)</li><li>การใช้งานโมเดลภาษาขนาดใหญ่แบบท้องถิ่น (Local LLM inference)</li><li>การรับรู้เสียงพูด</li><li>บอท Telegram และ LINE</li><li>การประมาณต้นทุนแบบจำลองและการเลือกแบบจำลอง</li><li>การใช้งานอัตโนมัติบนมือถือและการเก็บข้อมูล</li></ul>
+                </div>
+                <div class="card">
+                    <h3>ส่วนงานด้านหลังระบบและข้อมูล</h3>
+                    <ul class="tags"><li>Python</li><li>FastAPI</li><li>Django</li><li>DRF</li><li>SQLAlchemy 2.0</li><li>PostgreSQL (incl. RLS)</li><li>OpenID Connect / OAuth</li><li>ออกแบบ REST API</li><li>Webhooks</li></ul>
+                </div>
+                <div class="card">
+                    <h3>ฝ่ายด้านหน้า</h3>
+                    <ul class="tags"><li>Vue.js</li><li>Nuxt 4</li><li>Vuetify</li><li>React 19</li><li>TypeScript</li><li>Vite</li><li>TanStack Query</li></ul>
+                </div>
+                <div class="card">
+                    <h3>คุณภาพ</h3>
+                    <ul class="tags"><li>ทดสอบเบื้องหลังอัตโนมัติ</li><li>สถานการณ์แบบครบวงจร</li><li>ตรวจสอบซ้ำร่วมกัน</li><li>การแสดงผลที่ดูเหมาะสมบนเดสก์ท็อปและมือถือ</li></ul>
+                </div>
+                <div class="card">
+                    <h3>โครงสร้างพื้นฐาน</h3>
+                    <ul class="tags"><li>Docker</li><li>GitHub Actions</li><li>ผู้วิ่งบนเมฆชั่วคราว</li><li>Linux</li><li>Nginx</li><li>Caddy</li><li>Cloudflare (incl. Workers)</li><li>Git / GitHub</li></ul>
+                </div>
+                <div class="card wide">
+                    <h3>อุตสาหกรรม</h3>
+                    <ul class="tags"><li>อุตสาหกรรมบริการ</li><li>สุขภาพและความงามตามแนวทางอายูรเวท</li><li>ช่องทางการจองและระบบ PMS</li><li>PDPA</li></ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="no-print">
+            <h2>โอเพนซอร์ส · เซิร์ฟเวอร์ MCP</h2>
+            <ul class="oss">
+                <li><a href="https://github.com/santex85/gleif-lei-mcp" target="_blank" rel="noopener">gleif-lei-mcp</a> การค้นหาบริษัท ข้อมูล LEI ประวัติกรรมสิทธิ์ในบริษัท</li>
+                <li><a href="https://github.com/santex85/us-recalls-mcp" target="_blank" rel="noopener">us-recalls-mcp</a> การเรียกคืนสินค้าจาก FDA, NHTSA และ CPSC</li>
+                <li><a href="https://github.com/santex85/tariff-duty-mcp" target="_blank" rel="noopener">tariff-duty-mcp</a>อัตราภาษีสหรัฐอเมริกา HTS และสหราชอาณาจักร</li>
+                <li><a href="https://github.com/santex85/oss-audit-mcp" target="_blank" rel="noopener">oss-audit-mcp</a>ใบอนุญาต, Scorecard, ช่องโหว่ OSV</li>
+                <li><a href="https://github.com/santex85/domain-intel-mcp" target="_blank" rel="noopener">domain-intel-mcp</a>DNS, TLS, SPF/DMARC, HSTS</li>
+                <li><a href="https://github.com/santex85/ats-jobs-mcp" target="_blank" rel="noopener">ats-jobs-mcp</a>Greenhouse, Lever, Ashby งาน</li>
+                <li><a href="https://github.com/santex85/osm-poi-mcp" target="_blank" rel="noopener">osm-poi-mcp</a> OpenStreetMap POI และการระบุตำแหน่งทางภูมิศาสตร์</li>
+                <li><a href="https://github.com/santex85/fmcsa-carrier-mcp" target="_blank" rel="noopener">fmcsa-carrier-mcp</a> การตรวจสอบและประเมินผู้ขนส่งและนายหน้าในสหรัฐอเมริกา</li>
+                <li><a href="https://github.com/santex85/npi-provider-mcp" target="_blank" rel="noopener">npi-provider-mcp</a> การค้นหาผู้ให้บริการสาธารณสุขสหรัฐอเมริกา</li>
+            </ul>
+            <p class="note">ทั้งเก้ารายการได้รับการตีพิมพ์ใน MCP Registry อย่างเป็นทางการภายใต้ <code>io.github.santex85/*</code></p>
+        </section>
+
+        <section class="late">
+            <h2>การศึกษา ภาษา และอื่นๆ</h2>
+            <div class="facts plain">
+                <div><strong>การศึกษา</strong> · วุฒิประกาศนียบัตรวิชาชีพเทคนิค: พนักงานขับรถจักรยานยนต์ไฟฟ้า, ช่างซ่อมบำรุงรถจักรยานยนต์, ช่างไฟฟ้า (ระดับ 4, ผ่านเกณฑ์ใช้งานได้สูงสุด 27 กิโลโวลต์)</div>
+                <div><strong>ภาษา</strong> · รัสเซีย (แม่ภาษา), อังกฤษ (ระดับ B1, ปานกลาง)</div>
+                <div><strong>รูปแบบการทำงาน</strong> · เปิดรับงานเต็มเวลา ร่วมงานโปรเจกต์ตามสัญญา (แนะนำการจ่ายเงินตามเกณฑ์ระยะทาง) และเดินทางไปทำงานต่างประเทศเป็นเวลานาน</div>
+                <div><strong>ความสนใจ</strong> · การปั่นจักรยานบนถนนในระดับมือสมัครเล่นขั้นสูง (วิเคราะห์ข้อมูลการฝึกซ้อม); ดนตรี: กีตาร์, เบส, กลอง และวงดนตรีของตัวเอง</div>
+            </div>
+        </section>
+
+        <footer>ปรับปรุงเมื่อเดือนพฤศจิกายน ค.ศ. 2026 · github.com/santex85</footer>
+    </main>
+</div>
+
+</body>
+</html>
